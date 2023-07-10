@@ -5,7 +5,7 @@ const PineSymbol = Symbol.for("pine:pine");
 export function pinePlugin(app: App, options: Record<string, any>) {
   if ((pinePlugin as any).installed) return;
   (pinePlugin as any).installed = true;
-  console.log(options);
+  console.log("opt", options);
   app.component("p-btn", btn);
   app.provide(PineSymbol, {
     color: "#ffff11",

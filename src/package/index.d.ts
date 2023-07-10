@@ -1,13 +1,18 @@
-import btn from "./components/p-btn.vue";
+import { Plugin } from "vue";
+declare const PinePlugin: Plugin;
+
+export interface PinePluginApi {
+  color: string;
+}
+
+export function usePine(): PinePluginApi;
+
+export default PinePlugin;
+
+import pBtn from "./components/p-btn.vue";
 
 declare module "@vue/runtime-core" {
-  export interface Pine {
-    usePine: {
-      color: string;
-    };
-  }
-
   export interface GlobalComponents {
-    pinebtn: typeof btn;
+    pBtn: typeof pBtn;
   }
 }

@@ -1,5 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = defineProps<{
+  nova: Number;
+}>();
+</script>
 
-<template><button>teste</button></template>
+<template>
+  <button>teste {{ props.nova }}</button>
+</template>
 
 <style scoped lang="scss"></style>
