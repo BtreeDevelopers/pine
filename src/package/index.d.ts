@@ -16,3 +16,8 @@ declare module "@vue/runtime-core" {
     pBtn: typeof pBtn;
   }
 }
+declare module 'vue' {
+  export interface GlobalComponents {
+    pBtn: typeof pBtn;
+  }
+}
