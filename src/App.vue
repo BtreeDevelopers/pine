@@ -5,5 +5,5 @@ console.log(pine);
 </script>
 
 <template>
-  <p-btn :nova="3"></p-btn>
+  <PineBtn :nova="1"></PineBtn>
 </template>
