@@ -1,7 +1,7 @@
 {
   "name": "pine-btree",
   "private": false,
-  "version": "0.0.3",
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,12 +9,11 @@
     "preview": "vite preview"
   },
   "files": [
-    "src/package",
     "dist"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lucasnneto/testepine.git"
+    "url": "git+https://github.com/BtreeDevelopers/pine"
   },
   "keywords": [
     "pine",
@@ -24,7 +23,7 @@
   ],
   "main": "./dist/pine.umd.cjs",
   "module": "./dist/pine.js",
-  "types": "src/package/index.d.ts",
+  "types": "./dist/package/index.d.ts",
   "peerDependencies": {
     "vue": "^3.0.0"
   },
