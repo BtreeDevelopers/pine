@@ -1,0 +1,7 @@
+1- color
+    a- text
+    b- background
+    c- border
+2- border-radius
+3- tipografia
+4- margin/padding
