@@ -16,6 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/BtreeDevelopers/pine"
   },
+  "homepage": "https://btreedevelopers.github.io/pine",
   "keywords": [
     "pine",
     "vue3",
@@ -29,6 +30,7 @@
     "vue": "^3.0.0"
   },
   "dependencies": {
+    "@heroicons/vue": "^2.0.18",
     "sass": "^1.66.1",
     "vue": "^3.0.0",
     "vue-router": "^4.2.4"

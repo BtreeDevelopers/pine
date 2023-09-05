@@ -5,8 +5,9 @@ export function getColor(color:string,pine:PineApi ) {
   if (regexHex.test(color)) return color;
 
   if (!pine) return color;
-  if (pine.colors?.[pine.theme]?.[color])
-    return pine.colors?.[pine.theme]?.[color];
+  if (pine.colors?.[pine.theme]?.[color]){
+      return pine.colors?.[pine.theme]?.[color];
+  }
   if (colorNameToHex(color)) return colorNameToHex(color);
   return color;
 }
