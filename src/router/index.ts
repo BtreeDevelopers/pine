@@ -1,10 +1,11 @@
-import {createRouter,createWebHistory} from "vue-router"
+import {createRouter,createWebHashHistory} from "vue-router"
 import TextFieldView from "@/Views/TextFieldView.vue"
 const routes = [
     { path: '/textfield', component: TextFieldView },
   ]
 export const router = createRouter({
-    history: createWebHistory(),
+    // history: createWebHashHistory('/pine/'),
+    history: createWebHashHistory(),
     routes,
   })
   
