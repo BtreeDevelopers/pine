@@ -23,7 +23,7 @@ const computedColor = computed(() => getColor(props.color, pine))
 const computedValueWithUnit = computed(() => getValueWithUnit(props.width))
 </script>
 <template>
-    <div class="p-text-field">
+    <div class="pine-textfield">
         <p v-if="label">{{ label }}</p>
         <input :type="type" :disabled="disabled"
             @update:modelValue="(value: string | number) => emit('update:modelValue', value)" :modelValue="modelValue" />
@@ -31,7 +31,7 @@ const computedValueWithUnit = computed(() => getValueWithUnit(props.width))
 </template>
 
 <style lang="scss">
-.p-text-field {
+#pine-app .pine-textfield {
     margin: 2px;
 
     p {

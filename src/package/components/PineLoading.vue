@@ -23,7 +23,7 @@ const backgroundColorCmp = computed(() => getColor(props.backgroundColor, pine))
 </script>
 
 <template>
-    <div class="loader">
+    <div class="pine-loader">
         <svg class="circular-loader" viewBox="25 25 50 50">
             <circle class="loader-bg" cx="50" cy="50" r="20"></circle>
             <circle class="loader-path" cx="50" cy="50" r="20"></circle>
@@ -42,28 +42,30 @@ const backgroundColorCmp = computed(() => getColor(props.backgroundColor, pine))
     --stroke-end-dasharray: 89, 200;
 }
 
-.loader {
-    width: v-bind(sizeCmp);
-    height: v-bind(sizeCmp);
-}
+#pine-app {
+    .pine-loader {
+        width: v-bind(sizeCmp);
+        height: v-bind(sizeCmp);
+    }
 
-.circular-loader {
-    animation: rotate var(--rotation-animation-speed) var(--rotation-animation-easing) infinite;
-}
+    .circular-loader {
+        animation: rotate var(--rotation-animation-speed) var(--rotation-animation-easing) infinite;
+    }
 
-.loader-bg {
-    fill: none;
-    stroke-width: v-bind(weightCmp);
-    stroke-linecap: round;
-    stroke: v-bind(backgroundColorCmp);
-}
+    .loader-bg {
+        fill: none;
+        stroke-width: v-bind(weightCmp);
+        stroke-linecap: round;
+        stroke: v-bind(backgroundColorCmp);
+    }
 
-.loader-path {
-    fill: none;
-    stroke-width: v-bind(weightCmp);
-    animation: animate-stroke var(--stroke-animation-speed) var(--stroke-animation-easing) infinite;
-    stroke-linecap: round;
-    stroke: v-bind(colorCmp);
+    .loader-path {
+        fill: none;
+        stroke-width: v-bind(weightCmp);
+        animation: animate-stroke var(--stroke-animation-speed) var(--stroke-animation-easing) infinite;
+        stroke-linecap: round;
+        stroke: v-bind(colorCmp);
+    }
 }
 
 @keyframes rotate {

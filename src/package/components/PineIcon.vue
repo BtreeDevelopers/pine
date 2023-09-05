@@ -35,7 +35,7 @@ const computedValueWithUnit = computed(() => getValueWithUnit(props.size))
     <component :is="icon" class="pine-icon"></component>
 </template>
 <style lang="scss">
-.pine-icon {
+#pine-app .pine-icon {
     color: v-bind(computedColor);
     width: v-bind(computedValueWithUnit);
     height: v-bind(computedValueWithUnit);

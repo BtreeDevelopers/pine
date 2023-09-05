@@ -17,3 +17,4 @@
     a-switch theme
 15- tooltip
 16- checkbox
+17- loading - ok
