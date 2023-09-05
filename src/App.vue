@@ -10,6 +10,7 @@ console.log(pine);
       <RouterLink class="primary" to="/textfield">Textfield</RouterLink> |
       <RouterLink class="primary" to="/icon">Icon</RouterLink> |
       <RouterLink class="primary" to="/loading">Loading</RouterLink> |
+      <RouterLink class="primary" to="/drawer">Drawer</RouterLink> |
       <!-- <RouterLink to="/button">Button</RouterLink> |
       <RouterLink to="/input">Input</RouterLink> |
       <RouterLink to="/modal">Modal</RouterLink> |

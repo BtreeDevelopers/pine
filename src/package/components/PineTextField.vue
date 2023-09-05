@@ -31,6 +31,10 @@ const computedValueWithUnit = computed(() => getValueWithUnit(props.width))
 </template>
 
 <style lang="scss">
+#pine-app.dark .pine-textfield input {
+    color: #f1f1f1;
+}
+
 #pine-app .pine-textfield {
     margin: 2px;
 
