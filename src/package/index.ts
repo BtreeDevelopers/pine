@@ -3,6 +3,7 @@ import PineTextField from "./components/PineTextField.vue";
 import PineIcon from "./components/PineIcon.vue";
 import PineLoading from "./components/PineLoading.vue";
 import PineDrawer from "./components/PineDrawer.vue";
+import PineDrawerModel from "./components/PineDrawerModel.vue";
 import { App, inject } from "vue";
 export * from './types/components'
 import { PineApi, PinePlugin } from './types/models'
@@ -18,6 +19,7 @@ export function pinePlugin(app: App, options: PinePlugin) {
   app.component("PineIcon", PineIcon);
   app.component("PineLoading", PineLoading);
   app.component("PineDrawer", PineDrawer);
+  app.component("PineDrawerModel", PineDrawerModel);
   const pineApp = {
     theme: options?.theme || "dark", //'light'
     colors: {

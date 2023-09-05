@@ -3,11 +3,13 @@ import TextFieldView from "@/Views/TextFieldView.vue"
 import IconView from "@/Views/IconView.vue"
 import LoadingView from "@/Views/LoadingView.vue"
 import DrawerView from "@/Views/DrawerView.vue"
+import DrawerModelView from "@/Views/DrawerModelView.vue"
 const routes = [
     { path: '/textfield', component: TextFieldView },
     { path: '/icon', component: IconView },
     { path: '/loading', component: LoadingView },
     { path: '/drawer', component: DrawerView },
+    { path: '/drawermodel', component: DrawerModelView },
   ]
 export const router = createRouter({
     // history: createWebHashHistory('/pine/'),

@@ -11,6 +11,7 @@ console.log(pine);
       <RouterLink class="primary" to="/icon">Icon</RouterLink> |
       <RouterLink class="primary" to="/loading">Loading</RouterLink> |
       <RouterLink class="primary" to="/drawer">Drawer</RouterLink> |
+      <RouterLink class="primary" to="/drawermodel">Drawer - Model</RouterLink> |
       <!-- <RouterLink to="/button">Button</RouterLink> |
       <RouterLink to="/input">Input</RouterLink> |
       <RouterLink to="/modal">Modal</RouterLink> |

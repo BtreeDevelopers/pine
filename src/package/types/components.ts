@@ -4,6 +4,7 @@ import PineTextField from "../components/PineTextField.vue"
 import PineIcon from "../components/PineIcon.vue"
 import PineLoading from "../components/PineLoading.vue"
 import PineDrawer from "../components/PineDrawer.vue"
+import PineDrawerModel from "../components/PineDrawerModel.vue"
 
 declare module "@vue/runtime-core" {
   export interface GlobalComponents {
@@ -12,5 +13,6 @@ declare module "@vue/runtime-core" {
     PineIcon: typeof PineIcon;
     PineLoading: typeof PineLoading;
     PineDrawer: typeof PineDrawer;
+    PineDrawerModel: typeof PineDrawerModel;
   }
 }

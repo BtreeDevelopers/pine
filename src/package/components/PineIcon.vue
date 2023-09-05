@@ -39,6 +39,8 @@ const computedValueWithUnit = computed(() => getValueWithUnit(props.size))
     color: v-bind(computedColor);
     width: v-bind(computedValueWithUnit);
     height: v-bind(computedValueWithUnit);
+    min-width: v-bind(computedValueWithUnit);
+    min-height: v-bind(computedValueWithUnit);
 
 }
 </style>
