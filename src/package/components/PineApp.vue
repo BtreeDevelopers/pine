@@ -13,6 +13,7 @@ const pine = usePine();
 </template>
 <style lang="scss">
 @import "@/assets/global.scss";
+@import '@/assets/tooltip.scss';
 
 #pine-app {
     max-height: 100vh;

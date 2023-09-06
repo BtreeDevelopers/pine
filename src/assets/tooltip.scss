@@ -1,0 +1,85 @@
+.with-pine-tooltip {
+    position: relative;
+}
+
+.with-pine-tooltip::before {
+    content: attr(data-pine-tooltip);
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.3s;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    min-width: 120px;
+    background: #161922;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.with-pine-tooltip::after {
+    transition: opacity 0.3s;
+    opacity: 0;
+    content: "";
+    border-width: 7px;
+    border-style: solid;
+    border-color: #161922 transparent transparent transparent;
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.with-pine-tooltip:hover::before, 
+.with-pine-tooltip:hover::after, 
+.with-pine-tooltip:focus::before, 
+.with-pine-tooltip:focus::after {
+    opacity: 1;
+}
+
+.pine-tooltip--top::before {
+    inset-block-end: 120%;
+    inset-inline-start: 50%;
+    margin-inline-start: -60px;
+}
+
+.pine-tooltip--bottom::before {
+    inset-block-start: 120%;
+    inset-inline-start: 50%;
+    margin-inline-start: -60px;
+}
+
+.pine-tooltip--left::before {
+    inset-block-end: -50%;
+    inset-inline-end: 120%;
+    min-height: 100%;
+}
+
+.pine-tooltip--right::before {
+    inset-block-end: -50%;
+    inset-inline-start: 120%;
+    min-height: 100%;
+}
+
+.pine-tooltip--left::after {
+    inset-block-start: 10%;
+    inset-inline-start: -20%;
+    border-color: transparent transparent transparent #161922;
+}
+
+.pine-tooltip--right::after {
+    inset-block-start: 10%;
+    inset-inline-end: -20%;
+    border-color: transparent #161922 transparent transparent;
+}
+
+.pine-tooltip--top::after {
+    inset-block-start: -20%;
+    inset-inline-start: 40%;
+    border-color: #161922 transparent transparent  transparent;
+}
+
+.pine-tooltip--bottom::after {
+    inset-block-end: -20%;
+    inset-inline-start: 40%;
+    border-color: transparent transparent #161922 transparent;
+}

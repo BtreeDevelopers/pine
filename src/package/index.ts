@@ -7,6 +7,7 @@ import PineDrawerModel from "./components/PineDrawerModel.vue";
 import { App, inject } from "vue";
 export * from './types/components'
 import { PineApi, PinePlugin } from './types/models'
+import {TooltipDirective} from "./directives/tooltip.ts"
 
 
 const PineSymbol = Symbol.for("pine:pine");
@@ -20,6 +21,9 @@ export function pinePlugin(app: App, options: PinePlugin) {
   app.component("PineLoading", PineLoading);
   app.component("PineDrawer", PineDrawer);
   app.component("PineDrawerModel", PineDrawerModel);
+
+
+  app.directive('tooltip',TooltipDirective)
   const pineApp = {
     theme: options?.theme || "dark", //'light'
     colors: {
