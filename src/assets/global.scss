@@ -6,13 +6,13 @@
   --p-light-error: transparent;
   --p-light-warning: transparent;
   --p-light-background: transparent;
-  --p-light-card: transparent;
+  --p-light-highlight: transparent;
   --p-dark-primary: transparent;
   --p-dark-secondary: transparent;
   --p-dark-error: transparent;
   --p-dark-warning: transparent;
   --p-dark-background: transparent;
-  --p-dark-card: transparent;
+  --p-dark-highlight: transparent;
 }
 html,
 body,
@@ -93,8 +93,8 @@ body,
   .warning {
     color: var(--p-light-warning);
   }
-  .card {
-    background-color: var(--p-light-card);
+  .highlight {
+    background-color: var(--p-light-highlight);
   }
 }
 
@@ -113,7 +113,7 @@ body,
   .warning {
     color: var(--p-dark-warning);
   }
-  .card {
-    background-color: var(--p-dark-card);
+  .highlight {
+    background-color: var(--p-dark-highlight);
   }
 }

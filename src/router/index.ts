@@ -7,6 +7,7 @@ import DrawerView from "@/Views/DrawerView.vue";
 import DrawerModelView from "@/Views/DrawerModelView.vue";
 import TooltipView from "@/Views/TooltipView.vue";
 import MenuView from "@/Views/MenuView.vue";
+import SelectView from "@/Views/SelectView.vue";
 const routes = [
   { path: "/", component: HomeView },
   { path: "/textfield", component: TextFieldView },
@@ -16,6 +17,7 @@ const routes = [
   { path: "/drawermodel", component: DrawerModelView },
   { path: "/tooltip", component: TooltipView },
   { path: "/menu", component: MenuView },
+  { path: "/select", component: SelectView },
 ];
 export const router = createRouter({
   // history: createWebHashHistory('/pine/'),

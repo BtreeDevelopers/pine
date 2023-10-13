@@ -5,6 +5,7 @@ import PineLoading from "./components/PineLoading.vue";
 import PineDrawer from "./components/PineDrawer.vue";
 import PineDrawerModel from "./components/PineDrawerModel.vue";
 import PineMenu from "./components/PineMenu.vue";
+import PineSelect from "./components/PineSelect.vue";
 import { App, inject, reactive } from "vue";
 export * from "./types/components";
 import { PineApi, PinePlugin } from "./types/models";
@@ -23,6 +24,7 @@ export function pinePlugin(app: App, options: PinePlugin) {
   app.component("PineDrawer", PineDrawer);
   app.component("PineDrawerModel", PineDrawerModel);
   app.component("PineMenu", PineMenu);
+  app.component("PineSelect", PineSelect);
 
   app.directive("tooltip", TooltipDirective);
   app.directive("clickOutside", ClickOutsideDirective);
@@ -33,18 +35,30 @@ export function pinePlugin(app: App, options: PinePlugin) {
         primary: "#5093FE",
         secondary: "#00F391",
         error: "#FE5050",
-        warning: "#FED050",
+        warning: "#FF8A00",
         background: "#F1F1F1",
-        card: "#E5E6E8",
+        highlight: "#E5E6E8",
+        neutral100: "#000000",
+        neutral80: "#6C6C6C",
+        neutral70: "#757575",
+        neutral60: "#7F7F7F",
+        neutral30: "#B5B5B5",
+        neutral0: "#FFFFFF",
         ...options?.colors?.light,
       },
       dark: {
         primary: "#5093FE",
         secondary: "#00F391",
         error: "#FE5050",
-        warning: "#FED050",
-        background: "#1E1E1E",
-        card: "#252831",
+        warning: "#FF8A00",
+        background: "#161922",
+        highlight: "#252831",
+        neutral100: "#000000",
+        neutral80: "#6C6C6C",
+        neutral70: "#757575",
+        neutral60: "#7F7F7F",
+        neutral30: "#B5B5B5",
+        neutral0: "#FFFFFF",
         ...options?.colors?.dark,
       },
     },
@@ -56,13 +70,13 @@ export function pinePlugin(app: App, options: PinePlugin) {
   r.style.setProperty("--p-light-error", pineApp.colors.light.error);
   r.style.setProperty("--p-light-warning", pineApp.colors.light.warning);
   r.style.setProperty("--p-light-background", pineApp.colors.light.background);
-  r.style.setProperty("--p-light-card", pineApp.colors.light.card);
+  r.style.setProperty("--p-light-highlight", pineApp.colors.light.highlight);
   r.style.setProperty("--p-dark-primary", pineApp.colors.dark.primary);
   r.style.setProperty("--p-dark-secondary", pineApp.colors.dark.secondary);
   r.style.setProperty("--p-dark-error", pineApp.colors.dark.error);
   r.style.setProperty("--p-dark-warning", pineApp.colors.dark.warning);
   r.style.setProperty("--p-dark-background", pineApp.colors.dark.background);
-  r.style.setProperty("--p-dark-card", pineApp.colors.dark.card);
+  r.style.setProperty("--p-dark-highlight", pineApp.colors.dark.highlight);
 }
 export function usePine(): PineApi {
   const pine = inject<PineApi>(PineSymbol);

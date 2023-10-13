@@ -6,6 +6,7 @@ import PineLoading from "../components/PineLoading.vue";
 import PineDrawer from "../components/PineDrawer.vue";
 import PineDrawerModel from "../components/PineDrawerModel.vue";
 import PineMenu from "../components/PineMenu.vue";
+import PineSelect from "../components/PineSelect.vue";
 
 import { TooltipOptions } from "../directives/tooltip";
 import { ClickOutsideBindingArgs } from "../directives/clickOutside";
@@ -18,6 +19,7 @@ declare module "@vue/runtime-core" {
     PineDrawer: typeof PineDrawer;
     PineDrawerModel: typeof PineDrawerModel;
     PineMenu: typeof PineMenu;
+    PineSelect: typeof PineSelect;
   }
   export interface ComponentCustomProperties {
     vTooltip: FunctionDirective<HTMLElement, string | TooltipOptions>;

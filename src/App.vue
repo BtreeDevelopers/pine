@@ -15,6 +15,7 @@ console.log(pine);
       <RouterLink class="primary" to="/drawermodel">Drawer - Model</RouterLink>
       | <RouterLink class="primary" to="/tooltip">Tooltip</RouterLink> |
       <RouterLink class="primary" to="/menu">Menu</RouterLink> |
+      <RouterLink class="primary" to="/select">Select</RouterLink> |
       <!-- <RouterLink to="/button">Button</RouterLink> |
       <RouterLink to="/input">Input</RouterLink> |
       <RouterLink to="/modal">Modal</RouterLink> |

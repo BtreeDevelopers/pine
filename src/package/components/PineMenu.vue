@@ -27,7 +27,7 @@ watch(
 
 const allChildren = () => getAllChildren(menuBase.value!.childNodes as any);
 const closeMenu = () => (showMenu.value = false);
-const colorBG = computed(() => getColor("card", pine));
+const colorBG = computed(() => getColor("highlight", pine));
 const menuBase = ref<HTMLElement>();
 </script>
 <template>
@@ -61,7 +61,7 @@ const menuBase = ref<HTMLElement>();
 <style lang="scss">
 #pine-app {
   .p-menu {
-    // position: relative;
+    position: relative;
     height: 100%;
     width: min-content;
     .component {
@@ -73,6 +73,7 @@ const menuBase = ref<HTMLElement>();
       box-sizing: border-box;
       position: absolute;
       // width: 100%;
+      min-width: max-content;
 
       &.show-modal {
         display: flex;
