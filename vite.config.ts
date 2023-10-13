@@ -12,7 +12,7 @@ export default defineConfig({
   resolve: {
     alias: { "@": path.resolve(__dirname, "./src") },
   },
-  // base:"/pine/"
+  base: "/pine/",
   build: {
     lib: {
       // src/indext.ts is where we have exported the component(s)

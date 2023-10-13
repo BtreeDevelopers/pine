@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
+    "build:page": "vue-tsc && vite build --config vitebuild.config.ts",
     "preview": "vite preview",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
