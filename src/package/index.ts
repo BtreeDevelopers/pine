@@ -4,11 +4,12 @@ import PineIcon from "./components/PineIcon.vue";
 import PineLoading from "./components/PineLoading.vue";
 import PineDrawer from "./components/PineDrawer.vue";
 import PineDrawerModel from "./components/PineDrawerModel.vue";
-import { App, inject } from "vue";
-export * from './types/components'
-import { PineApi, PinePlugin } from './types/models'
-import {TooltipDirective} from "./directives/tooltip.ts"
-
+import PineMenu from "./components/PineMenu.vue";
+import { App, inject, reactive } from "vue";
+export * from "./types/components";
+import { PineApi, PinePlugin } from "./types/models";
+import { TooltipDirective } from "./directives/tooltip.ts";
+import { ClickOutsideDirective } from "./directives/clickOutside.ts";
 
 const PineSymbol = Symbol.for("pine:pine");
 
@@ -21,10 +22,11 @@ export function pinePlugin(app: App, options: PinePlugin) {
   app.component("PineLoading", PineLoading);
   app.component("PineDrawer", PineDrawer);
   app.component("PineDrawerModel", PineDrawerModel);
+  app.component("PineMenu", PineMenu);
 
-
-  app.directive('tooltip',TooltipDirective)
-  const pineApp = {
+  app.directive("tooltip", TooltipDirective);
+  app.directive("clickOutside", ClickOutsideDirective);
+  const pineApp = reactive({
     theme: options?.theme || "dark", //'light'
     colors: {
       light: {
@@ -46,8 +48,8 @@ export function pinePlugin(app: App, options: PinePlugin) {
         ...options?.colors?.dark,
       },
     },
-  }
-  app.provide(PineSymbol,pineApp);
+  });
+  app.provide(PineSymbol, pineApp);
   const r = document.querySelector<HTMLElement>(":root")!;
   r.style.setProperty("--p-light-primary", pineApp.colors.light.primary);
   r.style.setProperty("--p-light-secondary", pineApp.colors.light.secondary);
@@ -69,7 +71,7 @@ export function usePine(): PineApi {
 
   return pine;
 }
-export type { PineApi, PinePlugin } from './types/models'
+export type { PineApi, PinePlugin } from "./types/models";
 
 export default {
   install: pinePlugin,

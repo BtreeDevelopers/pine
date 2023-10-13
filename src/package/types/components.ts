@@ -1,13 +1,14 @@
-
 import { FunctionDirective } from "@vue/runtime-core";
 import PineApp from "../components/PineApp.vue";
-import PineTextField from "../components/PineTextField.vue"
-import PineIcon from "../components/PineIcon.vue"
-import PineLoading from "../components/PineLoading.vue"
-import PineDrawer from "../components/PineDrawer.vue"
-import PineDrawerModel from "../components/PineDrawerModel.vue"
+import PineTextField from "../components/PineTextField.vue";
+import PineIcon from "../components/PineIcon.vue";
+import PineLoading from "../components/PineLoading.vue";
+import PineDrawer from "../components/PineDrawer.vue";
+import PineDrawerModel from "../components/PineDrawerModel.vue";
+import PineMenu from "../components/PineMenu.vue";
 
-import {TooltipOptions} from "../directives/tooltip"
+import { TooltipOptions } from "../directives/tooltip";
+import { ClickOutsideBindingArgs } from "../directives/clickOutside";
 declare module "@vue/runtime-core" {
   export interface GlobalComponents {
     PineApp: typeof PineApp;
@@ -16,9 +17,10 @@ declare module "@vue/runtime-core" {
     PineLoading: typeof PineLoading;
     PineDrawer: typeof PineDrawer;
     PineDrawerModel: typeof PineDrawerModel;
+    PineMenu: typeof PineMenu;
   }
   export interface ComponentCustomProperties {
-    vTooltip: FunctionDirective<HTMLElement,string|TooltipOptions>;
-}
-
+    vTooltip: FunctionDirective<HTMLElement, string | TooltipOptions>;
+    vClickOutside: FunctionDirective<HTMLElement, ClickOutsideBindingArgs>;
+  }
 }
