@@ -10,6 +10,7 @@ import PineCard from "./components/PineCard.vue";
 import PineSwitch from "./components/PineSwitch.vue";
 import PineSwitchTheme from "./components/PineSwitchTheme.vue";
 import PineBtn from "./components/PineBtn.vue";
+import PineContainer from "./components/PineContainer.vue";
 import { App, inject, reactive } from "vue";
 export * from "./types/components";
 import { PineApi, PinePlugin } from "./types/models";
@@ -18,7 +19,7 @@ import { ClickOutsideDirective } from "./directives/clickOutside.ts";
 
 const PineSymbol = Symbol.for("pine:pine");
 
-export function pinePlugin(app: App, options: PinePlugin) {
+export function pinePlugin(app: App, options?: PinePlugin) {
   if ((pinePlugin as any).installed) return;
   (pinePlugin as any).installed = true;
   app.component("PineApp", PineApp);
@@ -33,6 +34,7 @@ export function pinePlugin(app: App, options: PinePlugin) {
   app.component("PineSwitch", PineSwitch);
   app.component("PineSwitchTheme", PineSwitchTheme);
   app.component("PineBtn", PineBtn);
+  app.component("PineContainer", PineContainer);
 
   app.directive("tooltip", TooltipDirective);
   app.directive("clickOutside", ClickOutsideDirective);

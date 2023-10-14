@@ -25,6 +25,8 @@ const isDark = computed(() => pine.theme === "dark");
     max-height: 100%;
     overflow: auto;
     height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 }
 </style>
