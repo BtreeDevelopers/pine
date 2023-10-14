@@ -12,10 +12,10 @@
 10- drawer - ok
     a- base drawer - ok
 11- dialog
-12- button
+12- button - ok
 13- select - ok
 14- switch - ok
     a-switch theme - ok
-15- tooltip
+15- tooltip - ok
 16- checkbox
 17- loading - ok

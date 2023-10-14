@@ -11,6 +11,7 @@ import SelectView from "@/Views/SelectView.vue";
 import CardView from "@/Views/CardView.vue";
 import SwitchView from "@/Views/SwitchView.vue";
 import SwitchThemeView from "@/Views/SwitchThemeView.vue";
+import BtnView from "@/Views/BtnView.vue";
 const routes = [
   { path: "/", component: HomeView },
   { path: "/textfield", component: TextFieldView },
@@ -24,6 +25,7 @@ const routes = [
   { path: "/card", component: CardView },
   { path: "/switch", component: SwitchView },
   { path: "/switchtheme", component: SwitchThemeView },
+  { path: "/btn", component: BtnView },
 ];
 export const router = createRouter({
   // history: createWebHashHistory('/pine/'),

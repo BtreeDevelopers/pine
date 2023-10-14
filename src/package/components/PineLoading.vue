@@ -6,10 +6,10 @@ const pine = usePine();
 
 const props = withDefaults(
   defineProps<{
-    size: number | string;
-    weight: number | string;
-    color: string;
-    backgroundColor: string;
+    size?: number | string;
+    weight?: number | string;
+    color?: string;
+    backgroundColor?: string;
   }>(),
   {
     size: 60,
