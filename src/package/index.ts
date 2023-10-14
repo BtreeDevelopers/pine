@@ -6,6 +6,9 @@ import PineDrawer from "./components/PineDrawer.vue";
 import PineDrawerModel from "./components/PineDrawerModel.vue";
 import PineMenu from "./components/PineMenu.vue";
 import PineSelect from "./components/PineSelect.vue";
+import PineCard from "./components/PineCard.vue";
+import PineSwitch from "./components/PineSwitch.vue";
+import PineSwitchTheme from "./components/PineSwitchTheme.vue";
 import { App, inject, reactive } from "vue";
 export * from "./types/components";
 import { PineApi, PinePlugin } from "./types/models";
@@ -25,6 +28,9 @@ export function pinePlugin(app: App, options: PinePlugin) {
   app.component("PineDrawerModel", PineDrawerModel);
   app.component("PineMenu", PineMenu);
   app.component("PineSelect", PineSelect);
+  app.component("PineCard", PineCard);
+  app.component("PineSwitch", PineSwitch);
+  app.component("PineSwitchTheme", PineSwitchTheme);
 
   app.directive("tooltip", TooltipDirective);
   app.directive("clickOutside", ClickOutsideDirective);

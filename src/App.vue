@@ -16,6 +16,10 @@ console.log(pine);
       | <RouterLink class="primary" to="/tooltip">Tooltip</RouterLink> |
       <RouterLink class="primary" to="/menu">Menu</RouterLink> |
       <RouterLink class="primary" to="/select">Select</RouterLink> |
+      <RouterLink class="primary" to="/card">Card</RouterLink> |
+      <RouterLink class="primary" to="/switch">Switch</RouterLink> |
+      <RouterLink class="primary" to="/switchtheme">Switch - Theme</RouterLink>
+      |
       <!-- <RouterLink to="/button">Button</RouterLink> |
       <RouterLink to="/input">Input</RouterLink> |
       <RouterLink to="/modal">Modal</RouterLink> |

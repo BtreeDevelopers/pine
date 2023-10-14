@@ -5,3 +5,15 @@
 2- border-radius
 3- tipografia
 4- margin/padding
+5- flex system
+6- elevation
+7- cursor
+8- sizes
+    a-100%
+    b-50%
+    c-25%
+    d-0%
+9-position
+    a- absolute
+    b- relative
+    c- top, bottom, left, right = 0

@@ -8,6 +8,9 @@ import DrawerModelView from "@/Views/DrawerModelView.vue";
 import TooltipView from "@/Views/TooltipView.vue";
 import MenuView from "@/Views/MenuView.vue";
 import SelectView from "@/Views/SelectView.vue";
+import CardView from "@/Views/CardView.vue";
+import SwitchView from "@/Views/SwitchView.vue";
+import SwitchThemeView from "@/Views/SwitchThemeView.vue";
 const routes = [
   { path: "/", component: HomeView },
   { path: "/textfield", component: TextFieldView },
@@ -18,6 +21,9 @@ const routes = [
   { path: "/tooltip", component: TooltipView },
   { path: "/menu", component: MenuView },
   { path: "/select", component: SelectView },
+  { path: "/card", component: CardView },
+  { path: "/switch", component: SwitchView },
+  { path: "/switchtheme", component: SwitchThemeView },
 ];
 export const router = createRouter({
   // history: createWebHashHistory('/pine/'),

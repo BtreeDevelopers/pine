@@ -2,7 +2,7 @@
 2- container
 3- textfield - ok
 4- icon - ok
-5- card
+5- card - ok
 6- header
 7- footer
 8- menu - ok
@@ -13,9 +13,9 @@
     a- base drawer - ok
 11- dialog
 12- button
-13- select
-14- switch
-    a-switch theme
+13- select - ok
+14- switch - ok
+    a-switch theme - ok
 15- tooltip
 16- checkbox
 17- loading - ok
