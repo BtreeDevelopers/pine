@@ -24,6 +24,7 @@ const isDark = computed(() => pine.theme === "dark");
   .pine-main {
     max-height: 100%;
     overflow: auto;
+    height: 100%;
   }
 }
 </style>

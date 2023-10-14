@@ -1,40 +1,22 @@
 <script setup lang="ts">
 import { ref } from "vue";
-
-const clickClose = ref(true);
+const valor = ref("teste");
+const valor2 = ref("a");
+const items = ["teste", "teste1", "teste2", "teste3", "teste4", "teste5"];
+const items2 = [
+  { text: "novo", value: "a" },
+  { text: "novo2", value: "b" },
+  { text: "novo3", value: "c" },
+];
 </script>
 
 <template>
   <div>
     <div style="text-align: center">
-      <PineSelect> </PineSelect>
-    </div>
-
-    <div style="display: flex">
-      <fieldset style="margin: 10px; width: 100%">
-        <legend>Fechar ao clicar em conteúdo:</legend>
-        <div>
-          <input
-            type="radio"
-            id="sim"
-            name="sim"
-            :value="true"
-            v-model="clickClose"
-          />
-          <label for="sim">Sim</label>
-        </div>
-
-        <div>
-          <input
-            type="radio"
-            id="nao"
-            name="nao"
-            :value="false"
-            v-model="clickClose"
-          />
-          <label for="nao">Não</label>
-        </div>
-      </fieldset>
+      <PineSelect :items="items" v-model="valor"> </PineSelect>
+      {{ valor }}
+      <PineSelect :items="items2" v-model="valor2"> </PineSelect>
+      {{ valor2 }}
     </div>
   </div>
 </template>

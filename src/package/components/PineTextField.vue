@@ -71,7 +71,7 @@ const computedValueWithUnit = computed(() => getValueWithUnit(props.width));
   p {
     margin-bottom: 5px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 14px;
   }
   .internal-icon {
     position: absolute;
@@ -103,7 +103,7 @@ const computedValueWithUnit = computed(() => getValueWithUnit(props.width));
       outline: 2px solid v-bind("getColor('neutral60',pine)");
     }
 
-    font-size: 24px;
+    font-size: 14px;
     min-width: 300px;
     width: v-bind("computedValueWithUnit");
   }
