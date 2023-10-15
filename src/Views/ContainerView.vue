@@ -1,11 +1,7 @@
-<script setup lang="ts">
-import { useToast } from "@/package";
-
-const toast = useToast();
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <PineContainer>
-    <button @click="toast.show('teste')">Teste</button>
+    <button>Teste</button>
   </PineContainer>
 </template>

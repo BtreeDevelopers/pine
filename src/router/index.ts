@@ -14,6 +14,7 @@ import SwitchThemeView from "@/Views/SwitchThemeView.vue";
 import BtnView from "@/Views/BtnView.vue";
 import ContainerView from "@/Views/ContainerView.vue";
 import DialogView from "@/Views/DialogView.vue";
+import ToastView from "@/Views/ToastView.vue";
 const routes = [
   { path: "/", component: HomeView },
   { path: "/textfield", component: TextFieldView },
@@ -30,6 +31,7 @@ const routes = [
   { path: "/btn", component: BtnView },
   { path: "/container", component: ContainerView },
   { path: "/dialog", component: DialogView },
+  { path: "/toast", component: ToastView },
 ];
 export const router = createRouter({
   // history: createWebHashHistory('/pine/'),

@@ -1,51 +1,45 @@
-import { createApp, nextTick, reactive } from "vue";
+import { App, createApp, nextTick, reactive } from "vue";
 import ToastContainer from "@/package/toast/ToastContainer.vue";
+import { IToast, OptionToast, TYPE, ToastPlugin } from "./types/toast";
 const getId = (
   (i) => () =>
     i++
 )(0);
 
-export const TYPE = {
-  SUCCESS: "success",
-  ERROR: "error",
-  WARNING: "warning",
-  INFO: "info",
-};
-
-export function createToastInterface(vueApp: any, options: any) {
+export function createToastInterface(vueApp: App, opc?: ToastPlugin) {
   const toastInterface = reactive({
-    toasts: [] as any[],
-    show: (content: string, options: any) => {
+    _toasts: [] as IToast[],
+    show: (content: string, options: OptionToast) => {
       const props = Object.assign(
         {},
         {
           id: getId(),
           type: TYPE.SUCCESS,
-          duration: 5000,
+          duration: opc?.duration || 5000,
+          theme: opc?.theme || "dark",
         },
         options,
         {
           content,
         }
       );
-      toastInterface.toasts.push(props);
+      toastInterface._toasts.push(props);
       return props.id;
     },
     clear: () => {
-      toastInterface.toasts = [];
+      toastInterface._toasts = [];
     },
     dismiss: (id: number) => {
-      const index = toastInterface.toasts.findIndex((t) => t.id === id);
+      const index = toastInterface._toasts.findIndex((t) => t.id === id);
       if (index !== -1) {
-        toastInterface.toasts.splice(index, 1);
+        toastInterface._toasts.splice(index, 1);
       }
     },
   });
   nextTick(() => {
     const app = createApp(ToastContainer, {
-      // ...containerProps,
-      ...toastInterface,
-      ...options,
+      toasts: toastInterface._toasts,
+      dismiss: toastInterface.dismiss,
     });
     const userApp = vueApp;
     app._context.components = userApp._context.components;

@@ -1,3 +1,5 @@
+import { ToastPlugin } from "./toast";
+
 interface Colors extends Record<string, string> {
   primary: string;
   secondary: string;
@@ -23,4 +25,4 @@ type Nullable<T> = {
 };
 
 // Criar a nova interface tornando os campos nuláveis
-export type PinePlugin = Nullable<PineApi>;
+export type PinePlugin = Nullable<PineApi> & { toast?: ToastPlugin };

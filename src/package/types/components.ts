@@ -13,6 +13,7 @@ import PineSwitchTheme from "../components/PineSwitchTheme.vue";
 import PineBtn from "../components/PineBtn.vue";
 import PineContainer from "../components/PineContainer.vue";
 import PineDialog from "../components/PineDialog.vue";
+import PineToast from "../components/PineToast.vue";
 
 import { TooltipOptions } from "../directives/tooltip";
 import { ClickOutsideBindingArgs } from "../directives/clickOutside";
@@ -32,6 +33,7 @@ declare module "@vue/runtime-core" {
     PineBtn: typeof PineBtn;
     PineContainer: typeof PineContainer;
     PineDialog: typeof PineDialog;
+    PineToast: typeof PineToast;
   }
   export interface ComponentCustomProperties {
     vTooltip: FunctionDirective<HTMLElement, string | TooltipOptions>;

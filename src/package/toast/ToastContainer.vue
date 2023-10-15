@@ -1,14 +1,11 @@
 <script setup lang="ts">
-import { usePine } from "@/package";
-import ProgressBar from "./components/Progress.vue";
-import Timer from "./components/Timer.vue";
-import XIcon from "./components/X.vue";
+import PineToast from "@/package/components/PineToast.vue";
 import { ref, onMounted } from "vue";
+import { IToast } from "../types/toast";
 const props = defineProps<{
-  toasts: any[];
-  dismiss: any;
+  toasts?: IToast[];
+  dismiss: (id: number) => void;
 }>();
-const pine = usePine();
 const el = ref<HTMLElement>();
 const removeElement = (el: Element) => {
   if (el.remove !== undefined) {
@@ -22,11 +19,6 @@ onMounted(() => {
   document.querySelector("#pine-app")!.appendChild(el.value!);
 });
 
-const getTheme = (toast: any) => {
-  if (toast && typeof toast.isDark === "boolean") return toast.isDark;
-
-  return pine.theme === "dark";
-};
 const deleteToast = (id: number) => {
   props.dismiss(id);
 };
@@ -35,33 +27,12 @@ const deleteToast = (id: number) => {
 <template>
   <div ref="el" class="b-toast__container">
     <TransitionGroup name="b-toast__bounce" tag="div">
-      <div
+      <PineToast
         v-for="toast in toasts"
         :key="toast.id"
-        class="b-toast__alert"
-        :class="`theme-${toast.type} ${getTheme(toast) ? 'dark' : ''}`"
-      >
-        <Timer
-          style="display: none"
-          :timer="toast.duration"
-          :id="toast.id"
-          @close-toast="deleteToast"
-        />
-        <div class="b-toast__text">
-          <h4
-            class="b-toast__title"
-            v-if="toast.title"
-            :class="`color-${toast.type}`"
-          >
-            {{ toast.title }}
-          </h4>
-          <h4 class="b-toast__content">{{ toast.content }}</h4>
-        </div>
-        <a @click="deleteToast(toast.id)" class="b-toast__close">
-          <XIcon :dark="getTheme(toast)" />
-        </a>
-        <ProgressBar :class="`bg-${toast.type}`" :duration="toast.duration" />
-      </div>
+        :toast="toast"
+        @delete-toast="deleteToast"
+      ></PineToast>
     </TransitionGroup>
   </div>
 </template>
@@ -132,63 +103,8 @@ $trans-cubic-bezier: cubic-bezier(0.215, 0.61, 0.355, 1);
     z-index: 9999;
     font-family: "Poppins", sans-serif !important;
   }
-  &__alert {
-    position: relative;
-    transition: all 750ms ease-in-out;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    padding: 18px 28px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #e5e6e8;
-    color: black;
-    &.dark {
-      background-color: #252831;
-      color: white;
-    }
-  }
-  &__close {
-    cursor: pointer;
-    height: 24px;
-    margin-left: 8px;
-  }
-  &__text {
-    display: flex;
-  }
-  &__title {
-    margin-right: 8px;
-  }
-  &__content {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-weight: 400;
-  }
 }
-@mixin alert($name, $bgColor) {
-  .theme-#{$name} {
-    border: 2px solid $bgColor;
-  }
-  .color-#{$name} {
-    color: #{$bgColor};
-  }
-  .bg-#{$name} {
-    background: #{$bgColor};
-  }
-}
-@include alert(success, #00f391);
-@include alert(error, #fe5050);
-@include alert(warning, #ff8a00);
-@include alert(info, #5093fe);
-.b-toast__progress {
-  position: absolute;
-  width: 100%;
-  height: 6px;
-  left: 0;
-  bottom: 0;
-  border-radius: 0px 0px 0px 6px;
-}
+
 @media (max-width: 800px) {
   .b-toast {
     &__container {
@@ -198,9 +114,6 @@ $trans-cubic-bezier: cubic-bezier(0.215, 0.61, 0.355, 1);
       > div {
         margin: 10px;
       }
-    }
-    &__alert {
-      margin-bottom: 10px;
     }
   }
 }
