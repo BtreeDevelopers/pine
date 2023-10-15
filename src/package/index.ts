@@ -11,6 +11,7 @@ import PineSwitch from "./components/PineSwitch.vue";
 import PineSwitchTheme from "./components/PineSwitchTheme.vue";
 import PineBtn from "./components/PineBtn.vue";
 import PineContainer from "./components/PineContainer.vue";
+import PineDialog from "./components/PineDialog.vue";
 import { App, inject, reactive } from "vue";
 export * from "./types/components";
 import { PineApi, PinePlugin } from "./types/models";
@@ -35,6 +36,7 @@ export function pinePlugin(app: App, options?: PinePlugin) {
   app.component("PineSwitchTheme", PineSwitchTheme);
   app.component("PineBtn", PineBtn);
   app.component("PineContainer", PineContainer);
+  app.component("PineDialog", PineDialog);
 
   app.directive("tooltip", TooltipDirective);
   app.directive("clickOutside", ClickOutsideDirective);

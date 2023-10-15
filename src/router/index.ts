@@ -13,6 +13,7 @@ import SwitchView from "@/Views/SwitchView.vue";
 import SwitchThemeView from "@/Views/SwitchThemeView.vue";
 import BtnView from "@/Views/BtnView.vue";
 import ContainerView from "@/Views/ContainerView.vue";
+import DialogView from "@/Views/DialogView.vue";
 const routes = [
   { path: "/", component: HomeView },
   { path: "/textfield", component: TextFieldView },
@@ -28,6 +29,7 @@ const routes = [
   { path: "/switchtheme", component: SwitchThemeView },
   { path: "/btn", component: BtnView },
   { path: "/container", component: ContainerView },
+  { path: "/dialog", component: DialogView },
 ];
 export const router = createRouter({
   // history: createWebHashHistory('/pine/'),

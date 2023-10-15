@@ -21,10 +21,7 @@ console.log(pine);
       <RouterLink class="primary" to="/switchtheme">Switch - Theme</RouterLink>
       |<RouterLink class="primary" to="/btn">Button</RouterLink> |
       <RouterLink class="primary" to="/container">Container</RouterLink> |
-      <!-- 
-      <RouterLink to="/input">Input</RouterLink> |
-      <RouterLink to="/modal">Modal</RouterLink> |
-      <RouterLink to="/slider">Slider</RouterLink> | -->
+      <RouterLink class="primary" to="/dialog">Dialog</RouterLink> |
     </div>
     <RouterView></RouterView>
   </PineApp>
