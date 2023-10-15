@@ -17,8 +17,10 @@ export * from "./types/components";
 import { PineApi, PinePlugin } from "./types/models";
 import { TooltipDirective } from "./directives/tooltip.ts";
 import { ClickOutsideDirective } from "./directives/clickOutside.ts";
+import { createToastInterface } from "./btoast.ts";
 
 const PineSymbol = Symbol.for("pine:pine");
+const ToastSymbol = Symbol.for("pine:toast");
 
 export function pinePlugin(app: App, options?: PinePlugin) {
   if ((pinePlugin as any).installed) return;
@@ -75,7 +77,9 @@ export function pinePlugin(app: App, options?: PinePlugin) {
       },
     },
   });
+  const toastInterface = createToastInterface(app, options);
   app.provide(PineSymbol, pineApp);
+  app.provide(ToastSymbol, toastInterface);
   const r = document.querySelector<HTMLElement>(":root")!;
   r.style.setProperty("--p-light-primary", pineApp.colors.light.primary);
   r.style.setProperty("--p-light-secondary", pineApp.colors.light.secondary);
@@ -90,12 +94,20 @@ export function pinePlugin(app: App, options?: PinePlugin) {
   r.style.setProperty("--p-dark-background", pineApp.colors.dark.background);
   r.style.setProperty("--p-dark-highlight", pineApp.colors.dark.highlight);
 }
+
 export function usePine(): PineApi {
   const pine = inject<PineApi>(PineSymbol);
 
   if (!pine) throw new Error("Erro ao procura a instância do Pine");
 
   return pine;
+}
+export function useToast(): any {
+  const toast = inject<any>(ToastSymbol);
+
+  if (!toast) throw new Error("Erro ao procura a instância do Toast");
+
+  return toast;
 }
 export type { PineApi, PinePlugin } from "./types/models";
 
