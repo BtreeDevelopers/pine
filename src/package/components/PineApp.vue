@@ -7,6 +7,7 @@ const isDark = computed(() => pine.theme === "dark");
 </script>
 <template>
   <div id="pine-app" :class="{ dark: isDark }">
+    <header class="header"></header>
     <main class="pine-main">
       <slot></slot>
     </main>

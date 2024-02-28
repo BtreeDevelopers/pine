@@ -8,16 +8,16 @@ const props = withDefaults(
         color?: string;
     }>(),
     {
-        color: "highlight",
+        color: "primary",
     }
 );
 const colorBG = computed(() => getColor(props.color, pine));
 </script>
 <template>
-    <Teleport to="#pine-app">
-        <footer class="pine-footer">
+    <Teleport to="#pine-app header">
+        <div class="pine-footer">
             <slot></slot>
-        </footer>
+        </div>
     </Teleport>
 </template>
 
@@ -25,14 +25,9 @@ const colorBG = computed(() => getColor(props.color, pine));
 .pine-footer {
     height: 45px;
     background-color: v-bind("colorBG");
-    align-items: center;
-    display: flex;
     flex: 0 1 auto !important;
     flex-wrap: wrap;
     padding: 6px 16px;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 </style>
