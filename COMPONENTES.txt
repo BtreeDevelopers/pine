@@ -6,9 +6,9 @@
 6- header - ok
 7- footer - ok
 8- menu - ok
-9- avatar
-    a- circle avatar
-    b- retangle avatar
+9- avatar - ok
+    a- circle avatar - ok 
+    b- retangle avatar - ok 
 10- drawer - ok
     a- base drawer - ok
 11- dialog - ok
