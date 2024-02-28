@@ -23,6 +23,7 @@ console.log(pine);
       <RouterLink class="primary" to="/container">Container</RouterLink> |
       <RouterLink class="primary" to="/dialog">Dialog</RouterLink> |
       <RouterLink class="primary" to="/toast">Toast</RouterLink> |
+      <RouterLink class="primary" to="/checkbox">Checkbox</RouterLink> |
     </div>
     <RouterView></RouterView>
   </PineApp>

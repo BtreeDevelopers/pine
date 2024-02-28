@@ -13,6 +13,8 @@ import PineBtn from "./components/PineBtn.vue";
 import PineContainer from "./components/PineContainer.vue";
 import PineDialog from "./components/PineDialog.vue";
 import PineToast from "./components/PineToast.vue";
+import PineCheckbox from "./components/PineCheckbox.vue";
+
 import { App, inject, reactive } from "vue";
 export * from "./types/components";
 import { PineApi, PinePlugin } from "./types/models";
@@ -42,6 +44,7 @@ export function pinePlugin(app: App, options?: PinePlugin) {
   app.component("PineContainer", PineContainer);
   app.component("PineDialog", PineDialog);
   app.component("PineToast", PineToast);
+  app.component("PineCheckbox", PineCheckbox);
 
   app.directive("tooltip", TooltipDirective);
   app.directive("clickOutside", ClickOutsideDirective);

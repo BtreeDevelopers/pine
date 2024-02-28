@@ -15,6 +15,7 @@ import BtnView from "@/Views/BtnView.vue";
 import ContainerView from "@/Views/ContainerView.vue";
 import DialogView from "@/Views/DialogView.vue";
 import ToastView from "@/Views/ToastView.vue";
+import CheckboxView from "@/Views/CheckboxView.vue";
 const routes = [
   { path: "/", component: HomeView },
   { path: "/textfield", component: TextFieldView },
@@ -32,6 +33,7 @@ const routes = [
   { path: "/container", component: ContainerView },
   { path: "/dialog", component: DialogView },
   { path: "/toast", component: ToastView },
+  { path: "/checkbox", component: CheckboxView },
 ];
 export const router = createRouter({
   // history: createWebHashHistory('/pine/'),

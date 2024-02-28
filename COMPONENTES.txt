@@ -17,6 +17,6 @@
 14- switch - ok
     a-switch theme - ok
 15- tooltip - ok
-16- checkbox
+16- checkbox - ok
 17- loading - ok
-18- b-toast
+18- b-toast - ok
