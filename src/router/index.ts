@@ -18,6 +18,8 @@ import ToastView from "@/Views/ToastView.vue";
 import CheckboxView from "@/Views/CheckboxView.vue";
 import FooterView from "@/Views/FooterView.vue";
 import HeaderView from "@/Views/HeaderView.vue";
+import AvatarView from "@/Views/AvatarView.vue";
+
 const routes = [
   { path: "/", component: HomeView },
   { path: "/textfield", component: TextFieldView },
@@ -38,6 +40,7 @@ const routes = [
   { path: "/checkbox", component: CheckboxView },
   { path: "/footer", component: FooterView },
   { path: "/header", component: HeaderView },
+  { path: "/avatar", component: AvatarView },
 ];
 export const router = createRouter({
   // history: createWebHashHistory('/pine/'),
