@@ -7,14 +7,18 @@
     opacity: 0;
     position: absolute;
     transition: opacity 0.3s;
-    color: #ffffff;
+    color: white;
     text-align: center;
     padding: 10px;
     border-radius: 6px;
     min-width: 120px;
-    background: #161922;
+    background:  var(--p-dark-highlight);
     pointer-events: none;
     z-index: 1;
+}
+#pine-app.dark .with-pine-tooltip::before{
+    color: black;
+    background: var(--p-light-highlight);
 }
 
 .with-pine-tooltip::after {
@@ -23,10 +27,13 @@
     content: "";
     border-width: 7px;
     border-style: solid;
-    border-color: #161922 transparent transparent transparent;
+    border-color: var(--p-dark-highlight) transparent transparent transparent;
     position: absolute;
     z-index: 1;
     pointer-events: none;
+}
+#pine-app.dark .with-pine-tooltip::after {
+    border-color: var(--p-light-highlight) transparent transparent transparent;
 }
 
 .with-pine-tooltip:hover::before, 
@@ -63,13 +70,19 @@
 .pine-tooltip--left::after {
     inset-block-start: 10%;
     inset-inline-start: -20%;
-    border-color: transparent transparent transparent #161922;
+    border-color: transparent transparent transparent var(--p-dark-highlight);
+}
+#pine-app.dark .pine-tooltip--left::after{
+    border-color: transparent transparent transparent var(--p-light-highlight);
 }
 
 .pine-tooltip--right::after {
     inset-block-start: 10%;
     inset-inline-end: -20%;
-    border-color: transparent #161922 transparent transparent;
+    border-color: transparent var(--p-dark-highlight) transparent transparent;
+}
+#pine-app.dark .pine-tooltip--right::after{
+    border-color: transparent var(--p-light-highlight) transparent transparent;
 }
 
 .pine-tooltip--top::after {
@@ -81,5 +94,8 @@
 .pine-tooltip--bottom::after {
     inset-block-end: -20%;
     inset-inline-start: 40%;
-    border-color: transparent transparent #161922 transparent;
+    border-color: transparent transparent var(--p-dark-highlight) transparent;
+}
+#pine-app.dark .pine-tooltip--bottom::after{
+    border-color: transparent transparent var(--p-light-highlight) transparent;
 }

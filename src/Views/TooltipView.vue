@@ -8,7 +8,7 @@ const text = ref("Eu sou um tooltip");
 <template>
   <div>
     <div style="text-align: center">
-      <button v-tooltip="{ text: text, position: (dir as any) }">Teste</button>
+      <button v-tooltip="{ text: text, position: (dir as any) }" style="background-color: aqua;">Teste</button>
 
       <br />
       <br />
@@ -25,44 +25,20 @@ const text = ref("Eu sou um tooltip");
       <fieldset style="margin: 10px; width: 100%">
         <legend>Direção:</legend>
         <div>
-          <input
-            type="radio"
-            id="top"
-            name="top"
-            :value="'top'"
-            v-model="dir"
-          />
+          <input type="radio" id="top" name="top" :value="'top'" v-model="dir" />
           <label for="top">Top</label>
         </div>
 
         <div>
-          <input
-            type="radio"
-            id="bottom"
-            name="bottom"
-            :value="'bottom'"
-            v-model="dir"
-          />
+          <input type="radio" id="bottom" name="bottom" :value="'bottom'" v-model="dir" />
           <label for="bottom">Bottom</label>
         </div>
         <div>
-          <input
-            type="radio"
-            id="left"
-            name="left"
-            :value="'left'"
-            v-model="dir"
-          />
+          <input type="radio" id="left" name="left" :value="'left'" v-model="dir" />
           <label for="left">Left</label>
         </div>
         <div>
-          <input
-            type="radio"
-            id="right"
-            name="right"
-            :value="'right'"
-            v-model="dir"
-          />
+          <input type="radio" id="right" name="right" :value="'right'" v-model="dir" />
           <label for="right">Right</label>
         </div>
       </fieldset>

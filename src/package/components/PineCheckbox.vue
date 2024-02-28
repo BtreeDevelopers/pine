@@ -62,7 +62,7 @@ watch(() => internalValue.value, (value) => {
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 1.25px solid transparent
+        border: 2px solid transparent
     }
 
     &.disabled .pine-sub-check {

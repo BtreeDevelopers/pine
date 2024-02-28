@@ -16,7 +16,7 @@ export function createToastInterface(vueApp: App, opc?: ToastPlugin) {
           id: getId(),
           type: TYPE.SUCCESS,
           duration: opc?.duration || 5000,
-          theme: opc?.theme || "dark",
+          theme: opc?.theme,
         },
         options,
         {
