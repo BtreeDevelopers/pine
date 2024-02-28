@@ -96,6 +96,33 @@ body,
   .highlight {
     background-color: var(--p-light-highlight);
   }
+  @supports not selector(::-webkit-scrollbar) {
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: #7f7f7f #b5b5b5;
+    }
+  }
+  
+  ::-webkit-scrollbar {
+    border-radius: 8px;
+    width: 8px;
+    height: 8px; /* A altura só é vista quando a rolagem é horizontal */
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background: rgb(181, 181, 181);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    width: 4px;
+    height: 4px;
+    background-color: #7f7f7f;
+    border: 2px solid #b5b5b5;
+  }
+
+ 
 }
 
 #pine-app.dark {

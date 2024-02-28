@@ -31,18 +31,10 @@ const emit = defineEmits<{ click: [] }>();
 </script>
 
 <template>
-  <button
-    class="pine-button"
-    :class="[type + '-button', { 'loading-button': loading }]"
-    :disabled="loading"
-    @click="emit('click')"
-  >
+  <button class="pine-button" :class="[type + '-button', { 'loading-button': loading }]" :disabled="loading"
+    @click="emit('click')">
     <div class="loading" v-if="loading">
-      <PineLoading
-        color="white"
-        background-color="highlight"
-        weight="6"
-      ></PineLoading>
+      <PineLoading color="white" background-color="highlight" weight="6"></PineLoading>
     </div>
     <div class="content">
       <slot></slot>
@@ -61,9 +53,11 @@ const emit = defineEmits<{ click: [] }>();
   cursor: pointer;
   border: none;
   position: relative;
+
   &.loading-button {
     cursor: auto;
   }
+
   .loading {
     position: absolute;
     width: 100%;
@@ -75,15 +69,19 @@ const emit = defineEmits<{ click: [] }>();
     justify-content: center;
     padding: 5px;
     box-sizing: border-box;
+
     :deep(.pine-loader) {
       height: 100% !important;
       width: auto !important;
+      min-width: 100%;
     }
+
     :deep(.circular-loader) {
       height: 100% !important;
       width: auto !important;
     }
   }
+
   &.loading-button .content {
     opacity: 0;
   }
@@ -92,33 +90,40 @@ const emit = defineEmits<{ click: [] }>();
     background-color: v-bind("backgroundColorCmp");
     color: white;
     transition: background-color 0.1 linear;
+
     &:hover:not(.loading-button) {
       background-color: v-bind("backgroundColorHoverCmp");
     }
+
     &:active:not(.loading-button) {
       background-color: v-bind("backgroundColorClickCmp");
     }
   }
+
   &.outline-button {
     background-color: transparent;
     color: v-bind("backgroundColorCmp");
     border: solid 1px v-bind("backgroundColorCmp");
+
     &:hover:not(.loading-button) {
-      background-color: v-bind("backgroundColorCmp+ percentToHex(10)");
+      background-color: v-bind("backgroundColorCmp + percentToHex(10)");
     }
+
     &:active:not(.loading-button) {
-      background-color: v-bind("backgroundColorCmp+ percentToHex(20)");
+      background-color: v-bind("backgroundColorCmp + percentToHex(20)");
     }
   }
+
   &.text-button {
     background-color: transparent;
     color: v-bind("backgroundColorCmp");
+
     &:hover:not(.loading-button) {
-      background-color: v-bind("backgroundColorCmp+ percentToHex(10)");
+      background-color: v-bind("backgroundColorCmp + percentToHex(10)");
     }
+
     &:active:not(.loading-button) {
       background-color: v-bind("backgroundColorCmp+ percentToHex(20)");
     }
   }
-}
-</style>
+}</style>

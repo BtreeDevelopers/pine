@@ -19,7 +19,7 @@ const props = withDefaults(
     "onClick:icon"?: () => void;
   }>(),
   {
-    width: "-webkit-fill-available",
+    width: "100%",
     type: "text",
     color: "primary",
     backgroundColor: "highlight",
@@ -39,20 +39,10 @@ const computedValueWithUnit = computed(() => getValueWithUnit(props.width));
   <div class="pine-textfield">
     <p v-if="label">{{ label }}</p>
     <div class="container">
-      <input
-        :type="type"
-        :disabled="disabled"
-        @input="(e:any) => emit('update:modelValue', e.target!.value)"
-        :value="modelValue"
-        :readonly="readonly"
-      />
-      <PineIcon
-        @click="emit('click:icon')"
-        class="internal-icon"
-        :class="{ 'icon-clickble': props['onClick:icon'] }"
-        v-if="iconRight"
-        :name="iconRight"
-      ></PineIcon>
+      <input :type="type" :disabled="disabled" @input="(e: any) => emit('update:modelValue', e.target!.value)"
+        :value="modelValue" :readonly="readonly" />
+      <PineIcon @click="emit('click:icon')" class="internal-icon" :class="{ 'icon-clickble': props['onClick:icon'] }"
+        v-if="iconRight" :name="iconRight"></PineIcon>
     </div>
   </div>
 </template>
@@ -64,6 +54,7 @@ const computedValueWithUnit = computed(() => getValueWithUnit(props.width));
 
 #pine-app .pine-textfield {
   margin: 2px;
+
   .container {
     position: relative;
   }
@@ -73,6 +64,7 @@ const computedValueWithUnit = computed(() => getValueWithUnit(props.width));
     font-weight: bold;
     font-size: 14px;
   }
+
   .internal-icon {
     position: absolute;
     right: 0;
@@ -80,10 +72,13 @@ const computedValueWithUnit = computed(() => getValueWithUnit(props.width));
     transform: translate(0, -50%);
     margin-right: 20px;
   }
+
   .icon-clickble {
     cursor: pointer;
   }
+
   input {
+    box-sizing: border-box;
     border: none;
     background: v-bind("computedBackgroundColor");
     border-radius: 8px;
@@ -99,8 +94,9 @@ const computedValueWithUnit = computed(() => getValueWithUnit(props.width));
     &:hover:not([disabled]) {
       outline: 2px solid v-bind("computedColor");
     }
+
     &[disabled] {
-      outline: 2px solid v-bind("getColor('neutral60',pine)");
+      outline: 2px solid v-bind("getColor('neutral60', pine)");
     }
 
     font-size: 14px;
