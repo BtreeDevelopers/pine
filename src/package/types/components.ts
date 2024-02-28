@@ -15,6 +15,7 @@ import PineContainer from "../components/PineContainer.vue";
 import PineDialog from "../components/PineDialog.vue";
 import PineToast from "../components/PineToast.vue";
 import PineCheckbox from "../components/PineCheckbox.vue";
+import PineFooter from "../components/PineFooter.vue";
 
 import { TooltipOptions } from "../directives/tooltip";
 import { ClickOutsideBindingArgs } from "../directives/clickOutside";
@@ -36,6 +37,7 @@ declare module "@vue/runtime-core" {
     PineDialog: typeof PineDialog;
     PineToast: typeof PineToast;
     PineCheckbox: typeof PineCheckbox;
+    PineFooter: typeof PineFooter;
   }
   export interface ComponentCustomProperties {
     vTooltip: FunctionDirective<HTMLElement, string | TooltipOptions>;

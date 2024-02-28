@@ -7,9 +7,9 @@ const isDark = computed(() => pine.theme === "dark");
 </script>
 <template>
   <div id="pine-app" :class="{ dark: isDark }">
-    <div class="pine-main">
+    <main class="pine-main">
       <slot></slot>
-    </div>
+    </main>
   </div>
 </template>
 <style lang="scss">
@@ -20,6 +20,8 @@ const isDark = computed(() => pine.theme === "dark");
   max-height: 100vh;
   height: 100vh;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 
   .pine-main {
     max-height: 100%;
