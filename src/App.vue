@@ -27,6 +27,8 @@ console.log(pine);
       <RouterLink class="primary" to="/footer">Footer</RouterLink> |
       <RouterLink class="primary" to="/header">Header</RouterLink> |
       <RouterLink class="primary" to="/avatar">Avatar</RouterLink> |
+      <RouterLink class="primary" to="/pickcolor">PickColor</RouterLink> |
+      <RouterLink class="primary" to="/calendar">Calendar</RouterLink> |
     </div>
     <RouterView></RouterView>
   </PineApp>

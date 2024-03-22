@@ -19,6 +19,8 @@ import CheckboxView from "@/Views/CheckboxView.vue";
 import FooterView from "@/Views/FooterView.vue";
 import HeaderView from "@/Views/HeaderView.vue";
 import AvatarView from "@/Views/AvatarView.vue";
+import PickColorView from "@/Views/PickColorView.vue";
+import CalendarView from "@/Views/CalendarView.vue";
 
 const routes = [
   { path: "/", component: HomeView },
@@ -40,7 +42,9 @@ const routes = [
   { path: "/checkbox", component: CheckboxView },
   { path: "/footer", component: FooterView },
   { path: "/header", component: HeaderView },
+  { path: "/pickcolor", component: PickColorView },
   { path: "/avatar", component: AvatarView },
+  { path: "/calendar", component: CalendarView },
 ];
 export const router = createRouter({
   // history: createWebHashHistory('/pine/'),
