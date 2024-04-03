@@ -12,11 +12,15 @@ type IItem =
 const props = withDefaults(
   defineProps<{
     items: IItem[];
+    label?: string;
+    placeholder?: string;
     color?: string;
     modelValue?: string;
+    backgroundColor?: string;
   }>(),
   {
     color: "primary",
+    backgroundColor: "highlight",
   }
 );
 onMounted(() => {
@@ -51,11 +55,16 @@ const selectItem = (item: IItem) => {
   selectedItem.value = getValue(item) as string;
   emit("update:modelValue", selectedItem.value);
 };
+const computedBackgroundColor = computed(
+  () => getColor(props.backgroundColor, pine) || "highlight"
+);
+
 const selectedItem = ref("");
 </script>
 
 <template>
   <div class="pine-select" :class="{ 'is-open': isOpen }">
+    <p v-if="label">{{ label }}</p>
     <PineMenu v-model="isOpen">
       <PineTextField
         :model-value="getTextValue()"
@@ -63,6 +72,8 @@ const selectedItem = ref("");
         readonly
         class="input"
         icon-right="ArrowDown"
+        :background-color="computedBackgroundColor"
+        :placeholder="placeholder"
       ></PineTextField>
       <template v-slot:menu>
         <ul class="list-items">
@@ -83,6 +94,12 @@ const selectedItem = ref("");
 <style scoped lang="scss">
 #pine-app {
   .pine-select {
+    p {
+      text-align: start;
+      margin-bottom: 5px;
+      font-weight: 600;
+      font-size: 14px;
+    }
     &.is-open :deep(.p-menu .component) {
       z-index: 4;
     }
