@@ -19,6 +19,7 @@ import PineHeader from "./components/PineHeader.vue";
 import PineAvatar from "./components/PineAvatar.vue";
 import PinePickColor from "./components/PinePickColor.vue";
 import PineCalendar from "./components/PineCalendar.vue";
+import PineUpload from "./components/PineUpload.vue";
 
 import { App, inject, reactive } from "vue";
 export * from "./types/components";
@@ -55,6 +56,7 @@ export function pinePlugin(app: App, options?: PinePlugin) {
   app.component("PineAvatar", PineAvatar);
   app.component("PinePickColor", PinePickColor);
   app.component("PineCalendar", PineCalendar);
+  app.component("PineUpload", PineUpload);
 
   app.directive("tooltip", TooltipDirective);
   app.directive("clickOutside", ClickOutsideDirective);

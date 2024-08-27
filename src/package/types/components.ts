@@ -20,6 +20,7 @@ import PineHeader from "../components/PineHeader.vue";
 import PineAvatar from "../components/PineAvatar.vue";
 import PinePickColor from "../components/PinePickColor.vue";
 import PineCalendar from "../components/PineCalendar.vue";
+import PineUpload from "../components/PineUpload.vue";
 
 import { TooltipOptions } from "../directives/tooltip";
 import { ClickOutsideBindingArgs } from "../directives/clickOutside";
@@ -46,6 +47,7 @@ declare module "@vue/runtime-core" {
     PineAvatar: typeof PineAvatar;
     PinePickColor: typeof PinePickColor;
     PineCalendar: typeof PineCalendar;
+    PineUpload: typeof PineUpload;
   }
   export interface ComponentCustomProperties {
     vTooltip: FunctionDirective<HTMLElement, string | TooltipOptions>;

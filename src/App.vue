@@ -29,6 +29,7 @@ console.log(pine);
       <RouterLink class="primary" to="/avatar">Avatar</RouterLink> |
       <RouterLink class="primary" to="/pickcolor">PickColor</RouterLink> |
       <RouterLink class="primary" to="/calendar">Calendar</RouterLink> |
+      <RouterLink class="primary" to="/upload">Upload</RouterLink> |
       <RouterLink class="primary" to="/style">Pagina de estilos</RouterLink> |
     </div>
     <RouterView></RouterView>
