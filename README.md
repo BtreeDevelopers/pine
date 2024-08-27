@@ -1,18 +1,69 @@
-# Vue 3 + TypeScript + Vite
+# Pine Design System
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Bem-vindo ao Pine Design System! Pine é um conjunto de diretrizes e componentes de design criado para ajudar a construir interfaces de usuário coesas e eficientes. Este sistema é projetado para garantir consistência visual e facilitar a criação de experiências de usuário de alta qualidade.
 
-## Recommended IDE Setup
+## Recursos
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- **Design System Pine UI**: Explore a coleção completa de componentes e diretrizes visuais no nosso portfólio no Behance:
+  [Design System Pine UI v1 - bTree](https://www.behance.net/gallery/161882269/Design-System-Pine-UI-v1-bTree)
 
-## Type Support For `.vue` Imports in TS
+- **Documentação**: A documentação do Pine está em processo de criação. Entretanto, você encontrará boas informações para começar a usar e implementar o design system em seus projetos. Acesse a documentação aqui:
+  [Documentação Pine](https://btreedevelopers.github.io/pine/)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Instalação
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+Para instalar o Pine Design System em projetos Vue 3, siga os passos abaixo:
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+1. **Instale o pacote via npm:**
+
+   ```bash
+   npm install pine-btree
+   ```
+
+2. **Importe e use o Pine Design System no seu projeto Vue 3:**
+
+   ```javascript
+   // main.js ou main.ts
+   import { createApp } from "vue";
+   import App from "./App.vue";
+   import pine from "pine-btree";
+
+   const app = createApp(App);
+
+   app.use(pine);
+   app.mount("#app");
+   ```
+
+## Exemplo de Uso
+
+Aqui está um exemplo de como usar o Pine Design System em seu componente Vue:
+
+```html
+<script setup lang="ts">
+  import { usePine } from "pine-btree";
+
+  // Instancia do Pine para obter configurações como (cores, tema)
+  const pine = usePine();
+
+  // ...everything else
+</script>
+
+<template>
+  <!-- No App da aplicação, insira o PineApp para obter toda configuração necessária no projeto -->
+  <PineApp>
+    <TheRestOfYourApplication />
+  </PineApp>
+</template>
+```
+
+## Componentes
+
+O Pine Design System inclui uma ampla gama de componentes prontos para uso, incluindo botões, formulários, modais e muito mais. Cada componente é projetado para ser reutilizável e adaptável às suas necessidades.
+
+## Contribuição
+
+Estamos sempre abertos a contribuições e feedback! Se você gostaria de contribuir para o Pine Design System ou tem sugestões para melhorias, sinta-se à vontade para entrar em contato conosco ou abrir uma solicitação de pull no repositório.
+
+## Suporte
+
+Se você tiver alguma dúvida ou precisar de ajuda, entre em contato com nossa equipe de suporte através do e-mail: [btreedevs@gmail.com.br](mailto:btreedevs@gmail.com.br).

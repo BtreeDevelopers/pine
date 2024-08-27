@@ -1,7 +1,7 @@
 {
   "name": "pine-btree",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -17,7 +17,9 @@
     "type": "git",
     "url": "git+https://github.com/BtreeDevelopers/pine"
   },
-  "homepage": "https://btreedevelopers.github.io/pine",
+  "homepage": "https://btreedevelopers.github.io/pine/",
+  "license": "MIT",
+  "author": "btree <btreedevs@gmail.com>",
   "keywords": [
     "pine",
     "vue3",
