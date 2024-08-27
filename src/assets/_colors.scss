@@ -1,0 +1,46 @@
+$sides: (
+  "primary": var(--p-light-primary),
+  "secondary": var(--p-light-secondary),
+  "error": var(--p-light-error),
+  "warning": var(--p-light-warning),
+  "highlight": var(--p-light-highlight),
+);
+$sidesDark: (
+  "primary": var(--p-dark-primary),
+  "secondary": var(--p-dark-secondary),
+  "error": var(--p-dark-error),
+  "warning": var(--p-dark-warning),
+  "highlight": var(--p-dark-highlight),
+);
+
+#pine-app {
+  @each $side-key, $side-value in $sides {
+    $property: $side-value;
+
+    .#{$side-key} {
+      color: #{$property};
+    }
+    .#{$side-key}-bg {
+      background-color: #{$property};
+    }
+    .#{$side-key}-border {
+      border: 1px solid #{$property};
+    }
+  }
+
+  &.dark {
+    @each $side-key, $side-value in $sidesDark {
+      $property: $side-value;
+
+      .#{$side-key} {
+        color: #{$property};
+      }
+      .#{$side-key}-bg {
+        background-color: #{$property};
+      }
+      .#{$side-key}-border {
+        border: 1px solid #{$property};
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+$sides: (
+  "absolute": "absolute",
+  "relative": "relative",
+  "fixed": "fixed",
+);
+
+#pine-app {
+  @each $side-key, $side-value in $sides {
+    $property: if($side-key == "", "", -#{$side-value});
+
+    .#{$side-key} {
+      position: #{$property};
+    }
+  }
+  .top-0 {
+    top: 0;
+  }
+  .left-0 {
+    left: 0;
+  }
+  .right-0 {
+    right: 0;
+  }
+  .bottom-0 {
+    bottom: 0;
+  }
+}
+
+#pine-app {
+  .d- {
+    &flex {
+      display: flex;
+    }
+    &block {
+      display: block;
+    }
+    &grid {
+      display: grid;
+    }
+  }
+  .flex- {
+    &column {
+      flex-direction: column;
+    }
+    &row {
+      flex-direction: row;
+    }
+  }
+  .align- {
+    &center {
+      align-items: center;
+    }
+    &end {
+      align-items: flex-end;
+    }
+    &start {
+      align-items: flex-start;
+    }
+  }
+  .justify- {
+    &center {
+      justify-content: center;
+    }
+    &start {
+      justify-content: flex-start;
+    }
+    &end {
+      justify-content: flex-end;
+    }
+  }
+}

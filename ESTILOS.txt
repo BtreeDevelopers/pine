@@ -1,19 +1,15 @@
-1- color
+1- color - ok
     a- text
     b- background
     c- border
-2- border-radius
-3- tipografia
-4- margin/padding
-5- flex system
-6- elevation
-7- cursor
-8- sizes
-    a-100%
-    b-50%
-    c-25%
-    d-0%
-9-position
+2- border-radius ok
+3- tipografia - ok
+4- margin/padding - ok
+5- flex system - ok
+6- elevation - ok
+7- cursor - ok
+8- sizes - ok
+9-position - ok
     a- absolute
     b- relative
     c- top, bottom, left, right = 0

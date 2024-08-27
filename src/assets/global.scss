@@ -1,4 +1,6 @@
 @use "_spacing";
+@use "position";
+@use "_colors";
 
 :root {
   --p-light-primary: transparent;
@@ -22,6 +24,9 @@ body,
   overflow: hidden;
 }
 #pine-app {
+  * {
+    box-sizing: border-box;
+  }
   font-family: "Poppins", sans-serif;
   background-color: var(--p-light-background);
   p,
@@ -32,8 +37,19 @@ body,
   h5 {
     margin: 0;
   }
-  .elevation {
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  .elevation- {
+    &no {
+      box-shadow: none;
+    }
+    &low {
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    }
+    &medium {
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    }
+    &high {
+      box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+    }
   }
   .rounded {
     border-radius: 8px;
@@ -42,6 +58,18 @@ body,
     }
     &-small {
       border-radius: 2px;
+    }
+  }
+
+  .cursor- {
+    &pointer {
+      cursor: pointer;
+    }
+    &none {
+      cursor: none;
+    }
+    &unset {
+      cursor: unset;
     }
   }
 
@@ -81,39 +109,24 @@ body,
       }
     }
   }
-  .primary {
-    color: var(--p-light-primary);
-  }
-  .secondary {
-    color: var(--p-light-secondary);
-  }
-  .error {
-    color: var(--p-light-error);
-  }
-  .warning {
-    color: var(--p-light-warning);
-  }
-  .highlight {
-    background-color: var(--p-light-highlight);
-  }
   @supports not selector(::-webkit-scrollbar) {
     * {
       scrollbar-width: thin;
       scrollbar-color: #7f7f7f #b5b5b5;
     }
   }
-  
+
   ::-webkit-scrollbar {
     border-radius: 8px;
     width: 8px;
     height: 8px; /* A altura só é vista quando a rolagem é horizontal */
   }
-  
+
   ::-webkit-scrollbar-track {
     border-radius: 8px;
     background: rgb(181, 181, 181);
   }
-  
+
   ::-webkit-scrollbar-thumb {
     border-radius: 8px;
     width: 4px;
@@ -121,26 +134,24 @@ body,
     background-color: #7f7f7f;
     border: 2px solid #b5b5b5;
   }
-
- 
 }
 
 #pine-app.dark {
   background-color: var(--p-dark-background);
   color: #f1f1f1;
-  .primary {
-    color: var(--p-dark-primary);
-  }
-  .secondary {
-    color: var(--p-dark-secondary);
-  }
-  .error {
-    color: var(--p-dark-error);
-  }
-  .warning {
-    color: var(--p-dark-warning);
-  }
-  .highlight {
-    background-color: var(--p-dark-highlight);
-  }
+  // .primary {
+  //   color: var(--p-dark-primary);
+  // }
+  // .secondary {
+  //   color: var(--p-dark-secondary);
+  // }
+  // .error {
+  //   color: var(--p-dark-error);
+  // }
+  // .warning {
+  //   color: var(--p-dark-warning);
+  // }
+  // .highlight {
+  //   background-color: var(--p-dark-highlight);
+  // }
 }
