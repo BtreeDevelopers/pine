@@ -1,0 +1,58 @@
+{
+  "header": {
+    "docs": "Docs",
+    "components": "Components"
+  },
+  "home": {
+    "powered": "Powered By bTree",
+    "wellcome1": "Welcome to Our Kit UI",
+    "wellcome2": "and Design System!",
+    "text": "Customize your component",
+    "description": "Our mission is to turn the complexity of design into simplicity and cohesion. This is where creativity meets consistency, and where innovation meets usability. Here, you'll find the tools and guidelines needed to create exceptional experiences, no matter where you are in your project.",
+    "browseButton": "Browse components",
+    "option": "Option",
+    "label": {
+      "autocomplete": "Autocomplete",
+      "textfield": "Default"
+    },
+    "toast": {
+      "content": "Message sent!",
+      "title": "Success!",
+      "titleShort": "Ok!"
+    },
+    "button": "Text",
+    "planeja": {
+      "name": "PlanejaConta",
+      "type": "One-time Expense",
+      "date": "2024-09-25",
+      "value": "-U$ 1400,00"
+    },
+    "details": {
+      "free": {
+        "title": "free",
+        "text": "Open source on",
+        "text2": "GitHub"
+      },
+      "responsive": {
+        "title": "Responsive",
+        "text": "Every",
+        "text2": "component is resposive"
+      },
+      "modern": {
+        "title": "Modern",
+        "text": "Built with",
+        "text2": "Vue3.js",
+        "text3": "and",
+        "text4": "React",
+        "tag": "Soon"
+      },
+      "lightweight": {
+        "title": "Lightweight",
+        "text": "No other internal dependency"
+      }
+    },
+    "features": {
+      "title": "UI Kit Features"
+    }
+  }
+}

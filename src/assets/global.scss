@@ -37,6 +37,14 @@ body,
   h5 {
     margin: 0;
   }
+  .overflow- {
+    &auto {
+      overflow: auto;
+    }
+    &hidden {
+      overflow: hidden;
+    }
+  }
   .elevation- {
     &no {
       box-shadow: none;
@@ -75,6 +83,9 @@ body,
 
   .font- {
     &size- {
+      &xsmall {
+        font-size: x-small;
+      }
       &small {
         font-size: small;
       }

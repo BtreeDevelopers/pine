@@ -6,9 +6,9 @@ const pine = usePine();
 type IItem =
   | string
   | {
-      text: string;
-      value: string;
-    };
+    text: string;
+    value: string;
+  };
 const props = withDefaults(
   defineProps<{
     items: IItem[];
@@ -66,23 +66,12 @@ const selectedItem = ref("");
   <div class="pine-select" :class="{ 'is-open': isOpen }">
     <p v-if="label">{{ label }}</p>
     <PineMenu v-model="isOpen">
-      <PineTextField
-        :model-value="getTextValue()"
-        :color="color"
-        readonly
-        class="input"
-        icon-right="ArrowDown"
-        :background-color="computedBackgroundColor"
-        :placeholder="placeholder"
-      ></PineTextField>
+      <PineTextField :model-value="getTextValue()" :color="color" readonly class="input" icon-right="ArrowDown"
+        :background-color="computedBackgroundColor" :placeholder="placeholder"></PineTextField>
       <template v-slot:menu>
         <ul class="list-items">
-          <li
-            v-for="item in items"
-            :key="(getValue(item) as string)"
-            @click="selectItem(item)"
-            :class="{ 'item-selected': selectedItem === getValue(item) }"
-          >
+          <li v-for="item in items" :key="(getValue(item) as string)" @click="selectItem(item)"
+            :class="{ 'item-selected': selectedItem === getValue(item) }">
             {{ getValue(item, "text") }}
           </li>
         </ul>
@@ -100,38 +89,48 @@ const selectedItem = ref("");
       font-weight: 600;
       font-size: 14px;
     }
+
     &.is-open :deep(.p-menu .component) {
       z-index: 4;
     }
+
     &.is-open :deep(.p-menu .menu) {
       z-index: 3;
     }
+
     &.is-open :deep(input) {
       outline: 2px solid v-bind("computedColor");
     }
+
     :deep(.internal-icon) {
       transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
+
     &.is-open :deep(.internal-icon) {
       transform: rotate(180deg) translate(0, 50%);
     }
+
     .input :deep(input) {
       cursor: pointer;
     }
+
     :deep(.p-menu) {
       width: auto;
     }
+
     :deep(.p-menu .component) {
       width: 100%;
       z-index: 2;
       position: relative;
     }
+
     :deep(.p-menu .menu) {
       width: calc(100% - 3px);
       border-radius: 0px 0px 10px 10px;
       margin-top: -4px;
       margin-left: 1px;
     }
+
     .list-items {
       list-style: none;
       padding-left: 0;
@@ -141,6 +140,7 @@ const selectedItem = ref("");
       max-height: 240px;
       overflow-y: auto;
       margin: 0;
+
       li {
         padding-top: 14px;
         padding-bottom: 14px;
@@ -150,6 +150,7 @@ const selectedItem = ref("");
         text-align: start;
         cursor: pointer;
       }
+
       .item-selected {
         background-color: v-bind(computedColorDestaque);
       }

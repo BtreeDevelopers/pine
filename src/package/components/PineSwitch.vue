@@ -37,33 +37,16 @@ const changeValue = () => {
 </script>
 
 <template>
-  <a
-    @click="changeValue"
-    class="switch-pine"
-    :class="{ 'switch-disabled': disabled }"
-  >
+  <a @click="changeValue" class="switch-pine" :class="{ 'switch-disabled': disabled }">
     <input type="checkbox" :value="internalValue" :disabled="disabled" />
     <div class="toggle-base">
-      <PineIcon
-        :name="iconLeft"
-        :size="15"
-        :class="{ oculte: !internalValue }"
-        color="white"
-        class="absolute"
-        v-if="iconLeft"
-      ></PineIcon>
-      <div
-        :class="{ oculte: internalValue }"
-        class="absolute icon-right d-flex align-center"
-        v-if="iconRight"
-      >
+      <PineIcon :name="iconLeft" :size="15" :class="{ oculte: !internalValue }" color="white" class="absolute"
+        v-if="iconLeft"></PineIcon>
+      <div :class="{ oculte: internalValue }" class="absolute icon-right d-flex align-center" v-if="iconRight">
         <PineIcon :name="iconRight" :size="15" color="white"></PineIcon>
       </div>
       <Transition name="move">
-        <div
-          class="toggle-circle absolute"
-          :class="{ 'light-select': internalValue }"
-        ></div>
+        <div class="toggle-circle absolute" :class="{ 'light-select': internalValue }"></div>
       </Transition>
     </div>
   </a>
@@ -74,25 +57,31 @@ const changeValue = () => {
   input {
     display: none;
   }
+
   .absolute {
     position: absolute;
   }
+
   .none {
     display: none;
   }
+
   .light-select {
-    margin-left: 22px;
+    margin-left: 14px;
   }
+
   .icon-right {
     right: 0;
     display: flex;
     align-items: center;
     margin-right: 4px;
   }
+
   .oculte {
     opacity: 0;
     transition: opacity 0.5s ease;
   }
+
   .toggle-base {
     justify-content: space-between;
     background-color: v-bind(computedColor);
@@ -104,9 +93,11 @@ const changeValue = () => {
     padding: 0 4px;
     position: relative;
   }
+
   &.switch-disabled .toggle-base {
     background-color: v-bind("computedColorDisabled");
   }
+
   .toggle-circle {
     transition: all 0.5s ease;
     background: #fff;

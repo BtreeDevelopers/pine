@@ -7,9 +7,11 @@ const props = withDefaults(
   defineProps<{
     modelValue?: boolean;
     closeOnClick?: boolean;
+    dir?: 'left' | 'right'
   }>(),
   {
     closeOnClick: true,
+    dir: 'left'
   }
 );
 const emit = defineEmits<{ "update:modelValue": [value: boolean] }>();
@@ -31,28 +33,18 @@ const colorBG = computed(() => getColor("highlight", pine));
 const menuBase = ref<HTMLElement>();
 </script>
 <template>
-  <div
-    class="p-menu"
-    ref="menuBase"
-    v-click-outside="{
-      handler: closeMenu,
-      include: () => [...allChildren()],
-    }"
-  >
+  <div class="p-menu" ref="menuBase" v-click-outside="{
+    handler: closeMenu,
+    include: () => [...allChildren()],
+  }">
     <div class="component" ref="comp" @click="showMenu = !showMenu">
       <slot></slot>
     </div>
 
-    <div
-      class="menu"
-      :class="{ 'show-modal': showMenu }"
-      ref="timerPicker"
-      @click="
-        () => {
-          closeOnClick && closeMenu();
-        }
-      "
-    >
+    <div class="menu" :class="[{ 'show-modal': showMenu }, { 'right': dir === 'right' }]" ref="timerPicker" @click="() => {
+      closeOnClick && closeMenu();
+    }
+      ">
       <slot name="menu"></slot>
     </div>
   </div>
@@ -64,20 +56,27 @@ const menuBase = ref<HTMLElement>();
     position: relative;
     height: 100%;
     width: min-content;
+
     .component {
       width: min-content;
     }
 
     .menu {
+      z-index: 3;
       display: none;
       box-sizing: border-box;
       position: absolute;
       // width: 100%;
       min-width: max-content;
 
+      &.right {
+        right: 0;
+      }
+
       &.show-modal {
         display: flex;
       }
+
       margin-top: 2px;
       background: v-bind(colorBG);
       border-radius: 10px;

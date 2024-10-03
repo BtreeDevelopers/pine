@@ -35,6 +35,21 @@ const rounded = ref('');
 
   <div style="display: flex;flex-direction: column; width: 90%;">
     <fieldset style="margin: 10px; width: 100%">
+      <legend>grid</legend>
+      <p>pine-row 1:12</p>
+      <div class="pine-row">
+        <div class="pine-col-2" style="background-color: red;">
+          pine-col-2
+        </div>
+        <div class="pine-col-4" style="background-color: green;">
+          pine-col-4
+        </div>
+        <div class="pine-col" style="background-color: yellow;">
+          pine-col
+        </div>
+      </div>
+    </fieldset>
+    <fieldset style="margin: 10px; width: 100%">
       <legend>Tamanhos:</legend>
       <select name="dir" id="dir" v-model="lado">
         <option value="h">height</option>

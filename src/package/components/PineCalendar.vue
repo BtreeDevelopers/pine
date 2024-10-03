@@ -319,15 +319,15 @@ const separarArray = (arr: any[], tamanho: number) => {
                     <div>
                         <div v-for="(weekDays, ind) in monthDays" :key="ind" class="days">
                             <p @click="selectDay(day)" v-for="(day, ind2) in weekDays" :key="ind2 + '' + day" :class="{
-            otherMonth: day.month != atualMonth || day.year != atualYear,
-            today:
-                matchDate(day, today) && !matchDate(day, selected, true),
-            selected: matchDate(day, selected, true),
-            interdates: interdates(day) && ind2 !== 6,
-            'left-interdates':
-                ind2 === 5 && !matchDate(weekDays[6], selected, true),
-            'small-interdates': diffInDays === 1 && ind2 !== 6,
-        }">
+                                otherMonth: day.month != atualMonth || day.year != atualYear,
+                                today:
+                                    matchDate(day, today) && !matchDate(day, selected, true),
+                                selected: matchDate(day, selected, true),
+                                interdates: interdates(day) && ind2 !== 6,
+                                'left-interdates':
+                                    ind2 === 5 && !matchDate(weekDays[6], selected, true),
+                                'small-interdates': diffInDays === 1 && ind2 !== 6,
+                            }">
                                 <span>
                                     {{ day.day }}
                                 </span>
@@ -352,11 +352,11 @@ const separarArray = (arr: any[], tamanho: number) => {
                 <div class="body">
                     <div v-for="(line, ind) in monthsYear" :key="ind" class="months">
                         <p v-for="mt in line" :key="mt" @click="(atualMonth = mt), (modeScreen = 'DAY')" :class="{
-            selected: matchDate(
-                { month: mt, year: atualYear, day: 1 },
-                { ...selected[0], day: 1 }
-            ),
-        }">
+                            selected: matchDate(
+                                { month: mt, year: atualYear, day: 1 },
+                                { ...selected[0], day: 1 }
+                            ),
+                        }">
                             {{ months[mt].substr(0, 3) }}
                         </p>
                     </div>
@@ -378,8 +378,8 @@ const separarArray = (arr: any[], tamanho: number) => {
                 <div class="body">
                     <div v-for="(line, ind) in listYears" :key="ind" class="year">
                         <p v-for="yr in line" :key="yr" @click="(atualYear = yr), (modeScreen = 'MONTH')" :class="{
-            selected: selected[0].year === yr,
-        }">
+                            selected: selected[0].year === yr,
+                        }">
                             {{ yr }}
                         </p>
                     </div>
@@ -418,8 +418,10 @@ const separarArray = (arr: any[], tamanho: number) => {
 }
 
 .date {
+    width: min-content;
+
     .card {
-        height: 280px;
+        height: 300px;
         width: 320px;
         background: #252831;
         padding: 12px;
@@ -480,7 +482,7 @@ const separarArray = (arr: any[], tamanho: number) => {
                             display: flex;
                             align-items: center;
                             justify-content: center;
-                            position: absolute;
+                            // position: absolute;
                             z-index: 2;
                             height: 32px;
                             width: 32px;

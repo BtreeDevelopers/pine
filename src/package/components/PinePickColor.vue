@@ -663,6 +663,8 @@ onMounted(() => {
     border: 3px solid #3e435700;
     border-radius: 10px;
     background-color: v-bind("backgroundColorCmp");
+    height: auto !important;
+    padding: 10px 0px;
 }
 
 .color_picker {

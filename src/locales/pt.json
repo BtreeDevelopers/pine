@@ -1,0 +1,58 @@
+{
+  "header": {
+    "docs": "Documentação",
+    "components": "Componentes"
+  },
+  "home": {
+    "powered": "Desenvolvido por bTree",
+    "wellcome1": "Bem Vindo ao nosso Kit UI",
+    "wellcome2": "e Design System!",
+    "text": "Personalize seu componente",
+    "option": "Opção",
+    "description": "Nossa missão é transformar a complexidade do design em simplicidade e coesão. É aqui que a criatividade encontra a consistência e onde a inovação encontra a usabilidade. Aqui, você encontrará as ferramentas e diretrizes necessárias para criar experiências excepcionais, independentemente de onde você esteja em seu projeto.",
+    "browseButton": "Navegar pelos componentes",
+    "label": {
+      "autocomplete": "Autocomplete",
+      "textfield": "Padrão"
+    },
+    "toast": {
+      "content": "Mensagem enviada!",
+      "title": "Sucesso!",
+      "titleShort": "Ok!"
+    },
+    "button": "Texto",
+    "planeja": {
+      "name": "PlanejaConta",
+      "type": "Despesa Pontual",
+      "date": "25/09/2024",
+      "value": "-R$ 1400,00"
+    },
+    "details": {
+      "free": {
+        "title": "Gratuito",
+        "text": "Código aberto no",
+        "text2": "GitHub"
+      },
+      "responsive": {
+        "title": "Responsivo",
+        "text": "Cada",
+        "text2": "componente é responsivo"
+      },
+      "modern": {
+        "title": "Moderno",
+        "text": "Construído com",
+        "text2": "Vue3.js",
+        "text3": "e",
+        "text4": "React",
+        "tag": "Em breve"
+      },
+      "lightweight": {
+        "title": "Leve",
+        "text": "Nenhuma outra dependência interna"
+      }
+    },
+    "features": {
+      "title": "Recursos do Kit UI"
+    }
+  }
+}

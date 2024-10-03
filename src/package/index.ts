@@ -28,6 +28,8 @@ import { TooltipDirective } from "./directives/tooltip.ts";
 import { ClickOutsideDirective } from "./directives/clickOutside.ts";
 import { createToastInterface } from "./toast.ts";
 import { ToastApi } from "./types/toast.ts";
+import PineCarousel from "./components/PineCarousel.vue";
+import PineCarouselItem from "./components/PineCarouselItem.vue";
 
 const PineSymbol = Symbol.for("pine:pine");
 const ToastSymbol = Symbol.for("pine:toast");
@@ -57,6 +59,8 @@ export function pinePlugin(app: App, options?: PinePlugin) {
   app.component("PinePickColor", PinePickColor);
   app.component("PineCalendar", PineCalendar);
   app.component("PineUpload", PineUpload);
+  app.component("PineCarousel", PineCarousel);
+  app.component("PineCarouselItem", PineCarouselItem);
 
   app.directive("tooltip", TooltipDirective);
   app.directive("clickOutside", ClickOutsideDirective);
@@ -105,12 +109,15 @@ export function pinePlugin(app: App, options?: PinePlugin) {
   r.style.setProperty("--p-light-warning", pineApp.colors.light.warning);
   r.style.setProperty("--p-light-background", pineApp.colors.light.background);
   r.style.setProperty("--p-light-highlight", pineApp.colors.light.highlight);
+  r.style.setProperty("--p-light-neutral30", pineApp.colors.light.neutral30);
+
   r.style.setProperty("--p-dark-primary", pineApp.colors.dark.primary);
   r.style.setProperty("--p-dark-secondary", pineApp.colors.dark.secondary);
   r.style.setProperty("--p-dark-error", pineApp.colors.dark.error);
   r.style.setProperty("--p-dark-warning", pineApp.colors.dark.warning);
   r.style.setProperty("--p-dark-background", pineApp.colors.dark.background);
   r.style.setProperty("--p-dark-highlight", pineApp.colors.dark.highlight);
+  r.style.setProperty("--p-dark-neutral30", pineApp.colors.dark.neutral30);
 }
 
 export function usePine(): PineApi {
@@ -135,6 +142,7 @@ export type {
 } from "./types/toast.ts";
 export { TYPE as TYPE_TOAST } from "./types/toast.ts";
 export type { PineApi, PinePlugin } from "./types/models";
+export { useSize } from "./composables/useWindowSize.ts";
 
 export default {
   install: pinePlugin,

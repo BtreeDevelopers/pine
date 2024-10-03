@@ -43,28 +43,12 @@ const computedValueWithUnit = computed(() => getValueWithUnit(props.width));
   <div class="pine-textfield">
     <p v-if="label">{{ label }}</p>
     <div class="container">
-      <PineIcon
-        @click="emit('click:icon-left')"
-        class="internal-icon left-icon"
-        :class="{ 'icon-clickble': props['onClick:icon-left'] }"
-        v-if="iconLeft"
-        :name="iconLeft"
-      ></PineIcon>
-      <input
-        :placeholder="placeholder"
-        :type="type"
-        :disabled="disabled"
-        @input="(e: any) => emit('update:modelValue', e.target!.value)"
-        :value="modelValue"
-        :readonly="readonly"
-      />
-      <PineIcon
-        @click="emit('click:icon-right')"
-        class="internal-icon"
-        :class="{ 'icon-clickble': props['onClick:icon-right'] }"
-        v-if="iconRight"
-        :name="iconRight"
-      ></PineIcon>
+      <PineIcon @click="emit('click:icon-left')" class="internal-icon left-icon"
+        :class="{ 'icon-clickble': props['onClick:icon-left'] }" v-if="iconLeft" :name="iconLeft"></PineIcon>
+      <input :placeholder="placeholder" :type="type" :disabled="disabled"
+        @input="(e: any) => emit('update:modelValue', e.target!.value)" :value="modelValue" :readonly="readonly" />
+      <PineIcon @click="emit('click:icon-right')" class="internal-icon"
+        :class="{ 'icon-clickble': props['onClick:icon-right'] }" v-if="iconRight" :name="iconRight"></PineIcon>
     </div>
   </div>
 </template>
@@ -72,6 +56,7 @@ const computedValueWithUnit = computed(() => getValueWithUnit(props.width));
 <style lang="scss">
 #pine-app.dark .pine-textfield input {
   color: #f1f1f1;
+
   &::placeholder {
     color: #f1f1f1;
   }
@@ -97,6 +82,7 @@ const computedValueWithUnit = computed(() => getValueWithUnit(props.width));
     transform: translate(0, -50%);
     margin-right: 20px;
   }
+
   .left-icon {
     left: 0;
     margin-left: 20px;
@@ -119,9 +105,11 @@ const computedValueWithUnit = computed(() => getValueWithUnit(props.width));
     caret-color: v-bind("computedColor");
     font-weight: 400;
     color: black;
+
     &::placeholder {
       color: black;
     }
+
     &:focus-visible:not([disabled]),
     &:hover:not([disabled]) {
       outline: 2px solid v-bind("computedColor");
@@ -132,16 +120,18 @@ const computedValueWithUnit = computed(() => getValueWithUnit(props.width));
     }
 
     font-size: 14px;
-    min-width: 300px;
+    min-width: 260px;
     width: v-bind("computedValueWithUnit");
   }
-  .left-icon + input {
+
+  .left-icon+input {
     padding-left: 50px;
   }
 }
 
 .dark .p-text-field input {
   color: white;
+
   &::placeholder {
     color: white;
   }

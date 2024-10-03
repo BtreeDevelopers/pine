@@ -23,6 +23,7 @@ import PickColorView from "@/Views/PickColorView.vue";
 import CalendarView from "@/Views/CalendarView.vue";
 import UploadView from "@/Views/UploadView.vue";
 import StyleView from "@/Views/StyleView.vue";
+import CarouselView from "@/Views/CarouselView.vue";
 
 const routes = [
   { path: "/", component: HomeView },
@@ -48,6 +49,7 @@ const routes = [
   { path: "/avatar", component: AvatarView },
   { path: "/calendar", component: CalendarView },
   { path: "/upload", component: UploadView },
+  { path: "/carousel", component: CarouselView },
   { path: "/style", component: StyleView },
 ];
 export const router = createRouter({

@@ -92,13 +92,8 @@ const onDrop = (e: DragEvent) => {
           }}. Max {{ props.maxSize }} mb
         </p>
       </div>
-      <input
-        ref="fileInput"
-        type="file"
-        :accept="props.types && props.types.length ? props.types.join(',') : ''"
-        @change="changeDocument"
-        @drop.prevent="onDrop"
-      />
+      <input ref="fileInput" type="file" :accept="props.types && props.types.length ? props.types.join(',') : ''"
+        @change="changeDocument" @drop.prevent="onDrop" />
     </template>
     <div v-else class="selected-doc">
       <div class="base">
@@ -112,13 +107,7 @@ const onDrop = (e: DragEvent) => {
           <p class="size">{{ calculeSize(fileSelected.size) }} MB</p>
         </div>
       </div>
-      <PineIcon
-        name="XMark"
-        color="#757575"
-        :size="40"
-        class="cursor-pointer"
-        @click="removerDocumento"
-      ></PineIcon>
+      <PineIcon name="XMark" color="#757575" :size="40" class="cursor-pointer" @click="removerDocumento"></PineIcon>
     </div>
   </div>
 </template>
@@ -129,19 +118,23 @@ const onDrop = (e: DragEvent) => {
   height: 130px;
   box-sizing: border-box;
   position: relative;
+
   &.not-selected {
     cursor: pointer;
   }
+
   .base {
     display: flex;
   }
+
   .cursor-pointer {
     cursor: pointer;
   }
+
   .selected-doc {
     width: 100%;
     height: 100%;
-    background: #161924;
+    background: #252831;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -157,14 +150,17 @@ const onDrop = (e: DragEvent) => {
       border-radius: 10px;
       margin-right: 20px;
     }
+
     .name {
       font-size: 18px;
       font-weight: bold;
     }
+
     .size {
       font-size: 15px;
     }
   }
+
   input {
     width: 100%;
     height: 100%;
@@ -172,6 +168,7 @@ const onDrop = (e: DragEvent) => {
     position: absolute;
     cursor: pointer;
   }
+
   .data {
     cursor: pointer;
     position: absolute;
@@ -183,13 +180,16 @@ const onDrop = (e: DragEvent) => {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     .title {
       font-size: 18px;
       color: #5093fe;
+
       &.error {
         color: #fe5050;
       }
     }
+
     .info {
       font-size: 15px;
       color: #757575;

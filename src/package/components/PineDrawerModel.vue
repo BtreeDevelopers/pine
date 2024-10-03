@@ -27,7 +27,7 @@ const props = withDefaults(
     lastOption?: IItemLastDrawer;
   }>(),
   {
-    selectedColor: "background",
+    selectedColor: "highlight",
     modelValue: null,
     showIcons: true,
     iconDirection: "left",
@@ -60,78 +60,42 @@ function selectOption(value: number) {
   <div class="pine-drawer-model">
     <div>
       <div class="header">
-        <PineIcon
-          name="XMark"
-          color="text"
-          :size="30"
-          class="icon"
-          @click="emit('clickOnClose')"
-        ></PineIcon>
+        <PineIcon name="XMark" color="text" :size="20" class="icon" @click="emit('clickOnClose')"></PineIcon>
         <slot name="title"></slot>
         <div style="width: 30px"></div>
       </div>
       <div class="base">
-        <div
-          @click="item.disabled ? null : selectOption(ind)"
-          v-for="(item, ind) in props.itens"
-          :key="ind"
-          class="item-list"
-          :class="{
+        <div @click="item.disabled ? null : selectOption(ind)" v-for="(item, ind) in props.itens" :key="ind"
+          class="item-list" :class="{
             selected: internalModel === ind,
             'right-icon': iconDirection == 'right',
             disabled: item.disabled,
-          }"
-        >
-          <PineIcon
-            v-if="item.icon && props.showIcons && iconDirection == 'left'"
-            :size="26"
-            :name="item.icon"
-            :color="item.color || 'text'"
-            class="icon"
-          >
+          }">
+          <PineIcon v-if="item.icon && props.showIcons && iconDirection == 'left'" :size="17" :name="item.icon"
+            :color="item.color || 'text'" class="icon">
           </PineIcon>
           <p class="text-item">
             {{ item.title }}
           </p>
-          <PineIcon
-            v-if="item.icon && props.showIcons && iconDirection == 'right'"
-            :size="26"
-            :name="item.icon"
-            :color="item.color || 'text'"
-            class="icon"
-          >
+          <PineIcon v-if="item.icon && props.showIcons && iconDirection == 'right'" :size="17" :name="item.icon"
+            :color="item.color || 'text'" class="icon">
           </PineIcon>
         </div>
       </div>
     </div>
     <div class="end">
-      <div
-        class="item-list"
-        :class="{
-          'center-end': !props.showIcons,
-          'right-icon': iconDirection == 'right',
-        }"
-        @click="emit('clickOnLastItem')"
-        v-if="lastOption"
-      >
-        <PineIcon
-          v-if="props.showIcons && lastOption?.icon && iconDirection == 'left'"
-          :size="26"
-          :name="lastOption.icon"
-          :color="lastOption.color"
-          class="icon"
-        >
+      <div class="item-list" :class="{
+        'center-end': !props.showIcons,
+        'right-icon': iconDirection == 'right',
+      }" @click="emit('clickOnLastItem')" v-if="lastOption">
+        <PineIcon v-if="props.showIcons && lastOption?.icon && iconDirection == 'left'" :size="17"
+          :name="lastOption.icon" :color="lastOption.color" class="icon">
         </PineIcon>
         <p class="text-item">
           {{ lastOption?.title }}
         </p>
-        <PineIcon
-          v-if="props.showIcons && lastOption?.icon && iconDirection == 'right'"
-          :size="26"
-          :name="lastOption.icon"
-          :color="lastOption.color"
-          class="icon"
-        >
+        <PineIcon v-if="props.showIcons && lastOption?.icon && iconDirection == 'right'" :size="17"
+          :name="lastOption.icon" :color="lastOption.color" class="icon">
         </PineIcon>
       </div>
     </div>
@@ -173,7 +137,7 @@ function selectOption(value: number) {
       }
 
       .text-item {
-        font-size: 23px;
+        font-size: 12px;
         text-transform: capitalize;
       }
 
@@ -188,12 +152,12 @@ function selectOption(value: number) {
       &.disabled {
         cursor: default !important;
         background-color: #c6c6c6 !important;
+        color: #000;
       }
     }
   }
 
   .end {
-    margin-bottom: 20px;
 
     width: 100%;
 
