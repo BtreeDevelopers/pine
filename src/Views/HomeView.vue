@@ -306,6 +306,23 @@ const { breakpointRange, breakpoint, width } = useSize();
         </PineCard>
       </div>
     </div>
+    <div class="mt-10 d-flex flex-column align-center">
+      <h1 class="mb-10">Seamless Integration with <span style="color: #F7DF1E;">JavaScript</span> and <span style="color: #3178C6">TypeScript</span></h1>
+      <div class="d-flex align-center" style="max-width: 1000px;line-height: 32px;font-size: 18px;">
+        <img style="align-self: self-end;" src="@/assets/img/js.svg" alt="js">
+        <p class="mx-3" style="text-align: center;">
+          Our UI kit offers a seamless experience for developers by providing robust support for both JavaScript (JS)
+          and
+          TypeScript (TS). Whether you prefer the flexibility of JavaScript or the strong typing and enhanced tooling of
+          TypeScript, our kit ensures that you can leverage its full potential in your projects. With extensive
+          documentation
+          and examples tailored for both languages, you have the freedom to choose the right technology for your needs,
+          making
+          the integration process smooth and adaptable to your preferred development environment.
+        </p>
+        <img style="align-self: self-start;" src="@/assets/img/ts.svg" alt="ts">
+      </div>
+    </div>
   </PineContainer>
 </template>
 
