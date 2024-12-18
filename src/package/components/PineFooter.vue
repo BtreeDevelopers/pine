@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onMounted, ref } from 'vue';
+import { computed } from 'vue';
 import { getColor, getValueWithUnit } from '../mixins/utils';
 import { usePine } from "@/package";
 const pine = usePine();

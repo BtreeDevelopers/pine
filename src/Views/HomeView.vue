@@ -7,7 +7,6 @@ import PineTag from "@/package/components/PineTag.vue";
 import PineTimePicker from "@/package/components/PineTimePicker.vue";
 import PineRadio from "@/package/components/PineRadio.vue";
 import PinePagination from "@/package/components/PinePagination.vue";
-import { getColor } from "@/package/mixins/utils";
 const { t } = useI18n();
 
 const lista = Array.from({ length: 10 }, (_, i) => `${t('home.option')} ${i + 1}`);
