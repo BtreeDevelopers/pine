@@ -7,6 +7,7 @@ import PineTag from "@/package/components/PineTag.vue";
 import PineTimePicker from "@/package/components/PineTimePicker.vue";
 import PineRadio from "@/package/components/PineRadio.vue";
 import PinePagination from "@/package/components/PinePagination.vue";
+import { getColor } from "@/package/mixins/utils";
 const { t } = useI18n();
 
 const lista = Array.from({ length: 10 }, (_, i) => `${t('home.option')} ${i + 1}`);
@@ -52,17 +53,21 @@ onBeforeUnmount(() => {
   clearInterval(interval.value);
 })
 
+const redirectToRepo = () => {
+  console.log('aaa');
+  location.href = 'https://github.com/BtreeDevelopers/pine'
+}
 const pag = ref(0);
 
 const pine = usePine();
 const { breakpointRange, breakpoint, width } = useSize();
+
 </script>
 
 
 <template>
-  <PineContainer class="mt-10 pb-10 home">
+  <PineContainer class="py-10 home">
     <div class="pine-row">
-
       <div class="pr-8 pine-col-12" :class="{ 'pine-col-6': breakpointRange.mdAndUp }">
         <b class="primary font-size-small">
           {{ t('home.powered') }}
@@ -96,7 +101,6 @@ const { breakpointRange, breakpoint, width } = useSize();
           </div>
         </div>
       </template>
-
     </div>
     <template v-if="breakpoint !== 'small'">
       <div class="pine-row">
@@ -280,8 +284,8 @@ const { breakpointRange, breakpoint, width } = useSize();
       </div>
     </PineCard>
     <div class="mt-10">
-      <h1 class="mb-10">UI Kit Features</h1>
-      <div class="d-flex overflow-auto pb-5" style="gap:20px">
+      <h1 class="mb-10">{{ t('home.features.title') }}</h1>
+      <div class="d-flex overflow-auto pb-5" v-if="breakpoint != 'small'" style="gap:20px">
         <PineCard style="min-width: 320px;" height="370">
           <PineTimePicker></PineTimePicker>
         </PineCard>
@@ -305,24 +309,124 @@ const { breakpointRange, breakpoint, width } = useSize();
           <PineUpload style="height: 100%;"></PineUpload>
         </PineCard>
       </div>
+      <PineCarousel v-else :total-items="4" v-slot="{ current }" :cycle="3000">
+        <PineCarouselItem v-show="current === 0">
+          <PineCard style="min-width: 320px;" height="370">
+            <PineTimePicker></PineTimePicker>
+          </PineCard>
+        </PineCarouselItem>
+        <PineCarouselItem v-show="current === 1">
+          <PineCard style="min-width: 320px;" height="370">
+            <PineDrawerModel style="background-color: #161922" :itens="(listDrawer as any)" selectedColor="#252831"
+              :last-option="{ 'title': 'opt 3', 'icon': 'Trash', color: 'error' }">
+              <template #title>
+                <b>
+                  Pine Ui
+                </b>
+              </template>
+            </PineDrawerModel>
+          </PineCard>
+        </PineCarouselItem>
+        <PineCarouselItem v-show="current === 2">
+          <PineCard style="min-width: 320px;" class="d-flex flex-column align-center justify-around" height="370">
+            <PineSwitch></PineSwitch>
+            <PineCheckbox backgroundColor="background"></PineCheckbox>
+            <PineRadio value="teste" modelValue="" backgroundColor="background"></PineRadio>
+            <PinePagination :model-value="2" :total-pages="15"></PinePagination>
+          </PineCard>
+        </PineCarouselItem>
+        <PineCarouselItem v-show="current === 3">
+          <PineCard style="min-width: 320px;" height="370">
+            <PineUpload style="height: 100%;"></PineUpload>
+          </PineCard>
+        </PineCarouselItem>
+
+      </PineCarousel>
     </div>
-    <div class="mt-10 d-flex flex-column align-center">
-      <h1 class="mb-10">Seamless Integration with <span style="color: #F7DF1E;">JavaScript</span> and <span style="color: #3178C6">TypeScript</span></h1>
+
+    <div class="my-10 d-flex flex-column align-center">
+      <h1 class="mb-10">{{ t('home.seamless.title1') }} <span style="color: #F7DF1E;">JavaScript</span> {{
+        t('home.seamless.title2') }} <span style="color: #3178C6">TypeScript</span></h1>
       <div class="d-flex align-center" style="max-width: 1000px;line-height: 32px;font-size: 18px;">
-        <img style="align-self: self-end;" src="@/assets/img/js.svg" alt="js">
+        <img style="align-self: self-end;" v-if="breakpointRange.mdAndUp" src="@/assets/img/js.svg" alt="js">
         <p class="mx-3" style="text-align: center;">
-          Our UI kit offers a seamless experience for developers by providing robust support for both JavaScript (JS)
-          and
-          TypeScript (TS). Whether you prefer the flexibility of JavaScript or the strong typing and enhanced tooling of
-          TypeScript, our kit ensures that you can leverage its full potential in your projects. With extensive
-          documentation
-          and examples tailored for both languages, you have the freedom to choose the right technology for your needs,
-          making
-          the integration process smooth and adaptable to your preferred development environment.
+          {{ t('home.seamless.text') }}
         </p>
-        <img style="align-self: self-start;" src="@/assets/img/ts.svg" alt="ts">
+        <img style="align-self: self-start;" v-if="breakpointRange.mdAndUp" src="@/assets/img/ts.svg" alt="ts">
       </div>
     </div>
+
+    <div class="pt-10 d-flex flex-column">
+      <h1 class="mb-6">{{ t('home.showcases.title') }}</h1>
+      <div class="d-flex overflow-auto pb-5" v-if="breakpoint != 'small'" style="gap:20px">
+        <img src="@/assets/img/prod1.png" height="560" alt="">
+        <img src="@/assets/img/prod2.png" height="560" alt="">
+        <img src="@/assets/img/prod3.png" height="560" alt="">
+      </div>
+      <PineCarousel v-else :total-items="3" v-slot="{ current }" :cycle="3000">
+        <PineCarouselItem class="d-flex justify-center align-center" v-show="current === 0">
+          <div style="height: 300px;">
+            <img src="@/assets/img/prod1.png" style="width: 100%; height: auto;" alt="">
+          </div>
+        </PineCarouselItem>
+        <PineCarouselItem v-show="current === 1" class="d-flex justify-center align-center">
+          <img src="@/assets/img/prod2.png" style="height: 400px;" alt="">
+        </PineCarouselItem>
+        <PineCarouselItem v-show="current === 2" class="d-flex justify-center align-center">
+          <img src="@/assets/img/prod3.png" style="height: 400px;" alt="">
+        </PineCarouselItem>
+      </PineCarousel>
+    </div>
+    <div class="pt-10 d-flex flex-column align-center justify-center background-image-git"
+      :class="pine.theme == 'light' ? 'background-light' : ''">
+      <h1 class="mb-6" style="text-align: center;">{{ t('home.git.title') }}</h1>
+      <p style="max-width: 700px; text-align: center; line-height: 32px;font-size: 18px;font-weight: 400; "
+        :class="pine.theme == 'light' ? 'neutral70' : 'neutral30'">
+        {{ t('home.git.text') }}
+      </p>
+      <PineBtn class="mt-8" width="250" @click="redirectToRepo">
+        {{ t('home.git.button') }}
+      </PineBtn>
+    </div>
+    <div class="d-flex justify-between footer"
+      :class="breakpointRange.smAndDown ? 'flex-column footer-mobile pt-0' : 'pt-10'">
+      <div class="about">
+        <h2 class="mb-2">{{ t('home.footer.about.title') }}</h2>
+        <p style="font-size: 16px; color: #7E92AC;font-weight: 400;">
+          {{ t('home.footer.about.text1') }} <span style="color: #3178C6">Pine
+            UI</span>
+          {{ t('home.footer.about.text2') }} <span style="font-weight: 700;">{{ t('home.footer.about.text3') }}</span>
+          {{
+            t('home.footer.about.text4') }}
+          <span style="color: #3178C6">GitHub</span>{{ t('home.footer.about.text5') }} <span style="color: #3178C6">Pine
+            UI</span> {{ t('home.footer.about.text6') }}
+        </p>
+      </div>
+      <div class="quick">
+        <h2 class="mb-3">{{ t('home.footer.quick.title') }}</h2>
+        <p style="line-height: 32px;font-size: 18px; color: #7E92AC;font-weight: 400;" class="mb-2">
+          {{ t('home.footer.quick.option1') }}
+        </p>
+        <p style="line-height: 32px;font-size: 18px; color: #7E92AC;font-weight: 400;" class="mb-2">
+          {{ t('home.footer.quick.option2') }}
+        </p>
+      </div>
+      <div class="newsletter">
+        <h2 class="mb-3">{{ t('home.footer.newsletter.title') }}</h2>
+        <div :class="breakpointRange.smAndDown ? '' : 'd-flex'">
+          <PineTextField class="textfield w-100" :placeholder="t('home.footer.newsletter.placeholder')"></PineTextField>
+          <PineBtn color="secondary" height="48" :class="breakpointRange.smAndDown ? 'mt-2' : ''"
+            :style="{ marginLeft: breakpointRange.smAndDown ? '' : '-15px' }">
+            <div class="d-flex align-center">
+              <span class="mr-1" style="font-size: 16px;">{{ t('home.footer.newsletter.button') }}</span>
+              <PineIcon name="PaperAirplane" color="white">
+              </PineIcon>
+            </div>
+          </PineBtn>
+        </div>
+      </div>
+    </div>
+
   </PineContainer>
 </template>
 
@@ -357,5 +461,46 @@ const { breakpointRange, breakpoint, width } = useSize();
 .home {
   max-width: 1540px;
   overflow: auto;
+}
+
+.footer {
+  .about {
+    width: 29%;
+  }
+
+  .newsletter {
+    width: 42%;
+
+    .textfield :deep(input) {
+      height: 45px;
+
+      &::placeholder {
+        color: #BBBBBB !important;
+      }
+    }
+
+  }
+}
+
+.footer-mobile {
+
+  .about,
+  .quick,
+  .newsletter {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+.background-image-git {
+  min-height: 770px;
+  background-image: url("@/assets/img/gitbg.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.background-light {
+  background-image: url("@/assets/img/gitbglight.svg");
 }
 </style>

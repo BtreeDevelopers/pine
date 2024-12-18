@@ -4,7 +4,11 @@ $sides: (
   "error": var(--p-light-error),
   "warning": var(--p-light-warning),
   "highlight": var(--p-light-highlight),
+  "neutral0": var(--p-light-neutral0),
   "neutral30": var(--p-light-neutral30),
+  "neutral60": var(--p-light-neutral60),
+  "neutral70": var(--p-light-neutral70),
+  "neutral80": var(--p-light-neutral80),
 );
 $sidesDark: (
   "primary": var(--p-dark-primary),
@@ -12,7 +16,11 @@ $sidesDark: (
   "error": var(--p-dark-error),
   "warning": var(--p-dark-warning),
   "highlight": var(--p-dark-highlight),
+  "neutral0": var(--p-dark-neutral0),
   "neutral30": var(--p-dark-neutral30),
+  "neutral60": var(--p-dark-neutral60),
+  "neutral70": var(--p-dark-neutral70),
+  "neutral80": var(--p-dark-neutral80),
 );
 
 #pine-app {

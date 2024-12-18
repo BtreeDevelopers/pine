@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
+import { computed, onMounted } from "vue";
 import { usePine, useSize } from "./package";
 const pine = usePine();
 console.log(pine);
@@ -14,6 +14,7 @@ onMounted(() => {
   changeLocale(localStorage.getItem('lang') || 'pt')
 })
 const { breakpoint } = useSize();
+const currentYear = computed(() => new Date().getFullYear()); 
 </script>
 
 <template>
@@ -79,6 +80,16 @@ const { breakpoint } = useSize();
       <RouterLink class="primary" to="/style">Pagina de estilos</RouterLink> |
     </div> -->
     <RouterView></RouterView>
+    <PineFooter color="primary" height="70px">
+      <div style="width: 100%;" class="d-flex justify-between container-menu">
+
+        <h3>{{ currentYear }} - Btree</h3>
+        <div class="d-flex justify-column align-center">
+          <RouterLink class="neutral0 mr-1" style="text-decoration: none;" to="/">Docs</RouterLink>
+          <RouterLink class="neutral0 ml-1" style="text-decoration: none;" to="/">Components</RouterLink>
+        </div>
+      </div>
+    </PineFooter>
   </PineApp>
 </template>
 <style>

@@ -53,6 +53,40 @@
     },
     "features": {
       "title": "UI Kit Features"
+    },
+    "seamless": {
+      "title1": "Seamless Integration with",
+      "title2": "and",
+      "text": "Our UI kit offers a seamless experience for developers by providing robust support for both JavaScript (JS) and TypeScript (TS). Whether you prefer the flexibility of JavaScript or the strong typing and enhanced tooling of TypeScript, our kit ensures that you can leverage its full potential in your projects. With extensive documentation and examples tailored for both languages, you have the freedom to choose the right technology for your needs, making the integration process smooth and adaptable to your preferred development environment."
+    },
+    "showcases": {
+      "title": "Showcases"
+    },
+    "git": {
+      "title": "Open Source Project on GitHub",
+      "text": "We are proud to announce that our UI kit is an open-source project, readily available on GitHub. The philosophy behind open-source software is transparency, collaboration, and sharing. This means you can access the source code, contribute improvements, and tap into the benefits of an active community of developers. Visit our GitHub repository and join us on this journey of constant innovation and enhancement. We believe in the power of the community to drive growth and excellence, and we look forward to receiving your contributions and feedback.",
+      "button": "Repository"
+    },
+    "footer": {
+      "about": {
+        "title": "About Us",
+        "text1": "With meticulous attention to detail and a carefully planned aesthetic,",
+        "text2": "delivers exceptionalflexibility, usability, and performance. As an",
+        "text3": "open-source",
+        "text4": "project on",
+        "text5": ", we invite you to join our community of developers and designers, empowering yourself to create products that impress and provide extraordinary experiences.",
+        "text6": "is our expression of innovation and our commitment to excellence in digital design and development. Together, we shape the future."
+      },
+      "quick": {
+        "title": "Quick Links",
+        "option1": "Installation",
+        "option2": "Components"
+      },
+      "newsletter": {
+        "title": "Subscribe to our Newsletter",
+        "placeholder": "Enter your email",
+        "button": "Subscribe"
+      }
     }
   }
 }

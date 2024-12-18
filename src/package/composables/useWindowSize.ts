@@ -22,8 +22,8 @@ export function useSize() {
   });
 
   const updateWindowSize = () => {
-    width.value = window.innerWidth;
-    height.value = window.innerHeight;
+    width.value = window.outerWidth;
+    height.value = window.outerHeight;
 
     breakpointRange.smAndDown = false;
     breakpointRange.smAndUp = false;

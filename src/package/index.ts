@@ -110,6 +110,9 @@ export function pinePlugin(app: App, options?: PinePlugin) {
   r.style.setProperty("--p-light-background", pineApp.colors.light.background);
   r.style.setProperty("--p-light-highlight", pineApp.colors.light.highlight);
   r.style.setProperty("--p-light-neutral30", pineApp.colors.light.neutral30);
+  r.style.setProperty("--p-light-neutral60", pineApp.colors.light.neutral60);
+  r.style.setProperty("--p-light-neutral70", pineApp.colors.light.neutral70);
+  r.style.setProperty("--p-light-neutral80", pineApp.colors.light.neutral80);
 
   r.style.setProperty("--p-dark-primary", pineApp.colors.dark.primary);
   r.style.setProperty("--p-dark-secondary", pineApp.colors.dark.secondary);
@@ -118,6 +121,9 @@ export function pinePlugin(app: App, options?: PinePlugin) {
   r.style.setProperty("--p-dark-background", pineApp.colors.dark.background);
   r.style.setProperty("--p-dark-highlight", pineApp.colors.dark.highlight);
   r.style.setProperty("--p-dark-neutral30", pineApp.colors.dark.neutral30);
+  r.style.setProperty("--p-dark-neutral60", pineApp.colors.dark.neutral60);
+  r.style.setProperty("--p-dark-neutral70", pineApp.colors.dark.neutral70);
+  r.style.setProperty("--p-dark-neutral80", pineApp.colors.dark.neutral80);
 }
 
 export function usePine(): PineApi {

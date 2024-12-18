@@ -53,6 +53,40 @@
     },
     "features": {
       "title": "Recursos do Kit UI"
+    },
+    "seamless": {
+      "title1": "Integração perfeita com",
+      "title2": "e",
+      "text": "Nosso kit de interface do usuário oferece uma experiência fluida para desenvolvedores, fornecendo suporte robusto tanto para JavaScript (JS) quanto para TypeScript (TS). Seja você adepto da flexibilidade do JavaScript ou da tipagem forte e ferramentas avançadas do TypeScript, nosso kit garante que você possa aproveitar todo o seu potencial em seus projetos. Com documentação extensa e exemplos adaptados para ambas as linguagens, você tem a liberdade de escolher a tecnologia certa para suas necessidades, tornando o processo de integração simples e adaptável ao seu ambiente de desenvolvimento preferido."
+    },
+    "showcases": {
+      "title": "Demonstrações"
+    },
+    "git": {
+      "title": "Projeto Open Source no GitHub",
+      "text": "Temos o orgulho de anunciar que nosso kit de interface do usuário é um projeto de código aberto, disponível no GitHub. A filosofia por trás do software de código aberto é a transparência, a colaboração e o compartilhamento. Isso significa que você pode acessar o código-fonte, contribuir com melhorias e aproveitar os benefícios de uma comunidade ativa de desenvolvedores. Visite nosso repositório no GitHub e junte-se a nós nesta jornada de constante inovação e aprimoramento. Acreditamos no poder da comunidade para impulsionar o crescimento e a excelência, e estamos ansiosos para receber suas contribuições e feedback.",
+      "button": "Repositório"
+    },
+    "footer": {
+      "about": {
+        "title": "Sobre Nós",
+        "text1": "Com uma atenção meticulosa aos detalhes e uma estética cuidadosamente planejada,",
+        "text2": "oferece flexibilidade, usabilidade e desempenho excepcionais. Sendo um",
+        "text3": "projeto de código aberto",
+        "text4": "no",
+        "text5": ", convidamos você a se juntar à nossa comunidade de desenvolvedores e designers, capacitando-se a criar produtos que impressionem e proporcionem experiências extraordinárias.",
+        "text6": "é a nossa expressão de inovação e o nosso compromisso com a excelência no design e desenvolvimento digital. Juntos, moldamos o futuro."
+      },
+      "quick": {
+        "title": "Links Rápidos",
+        "option1": "Instalação",
+        "option2": "Componentes"
+      },
+      "newsletter": {
+        "title": "Inscreva-se na Nossa Newsletter",
+        "placeholder": "Digite seu e-mail",
+        "button": "Inscrever"
+      }
     }
   }
 }

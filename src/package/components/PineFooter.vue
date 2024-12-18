@@ -1,29 +1,32 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { getColor } from '../mixins/utils';
+import { computed, nextTick, onMounted, ref } from 'vue';
+import { getColor, getValueWithUnit } from '../mixins/utils';
 import { usePine } from "@/package";
 const pine = usePine();
 const props = withDefaults(
     defineProps<{
         color?: string;
+        height?: number | string;
+        class?: string
     }>(),
     {
         color: "highlight",
+        height: "45px",
     }
 );
 const colorBG = computed(() => getColor(props.color, pine));
+const heightCmp = computed(() => getValueWithUnit(props.height));
+
 </script>
 <template>
-    <Teleport to="#pine-app">
-        <footer class="pine-footer">
-            <slot></slot>
-        </footer>
-    </Teleport>
+    <footer class="pine-footer" :class="props.class">
+        <slot></slot>
+    </footer>
 </template>
 
 <style scoped lang="scss">
 .pine-footer {
-    height: 45px;
+    height: v-bind("heightCmp");
     background-color: v-bind("colorBG");
     align-items: center;
     display: flex;
