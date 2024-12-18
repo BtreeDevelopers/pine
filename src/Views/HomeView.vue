@@ -56,7 +56,6 @@ const redirectToRepo = () => {
   console.log('aaa');
   location.href = 'https://github.com/BtreeDevelopers/pine'
 }
-const pag = ref(0);
 
 const pine = usePine();
 const { breakpointRange, breakpoint, width } = useSize();
