@@ -39,7 +39,7 @@ const changeValue = () => {
 <template>
   <a @click="changeValue" class="switch-pine" :class="{ 'switch-disabled': disabled }">
     <input type="checkbox" :value="internalValue" :disabled="disabled" />
-    <div class="toggle-base">
+    <div class="toggle-base" :class="{ 'switch-off': !internalValue && !iconRight }">
       <PineIcon :name="iconLeft" :size="15" :class="{ oculte: !internalValue }" color="white" class="absolute"
         v-if="iconLeft"></PineIcon>
       <div :class="{ oculte: internalValue }" class="absolute icon-right d-flex align-center" v-if="iconRight">
@@ -68,6 +68,7 @@ const changeValue = () => {
 
   .light-select {
     margin-left: 14px;
+
   }
 
   .icon-right {
@@ -84,7 +85,7 @@ const changeValue = () => {
 
   .toggle-base {
     justify-content: space-between;
-    background-color: v-bind(computedColor);
+    background-color: v-bind("computedColor");
     width: 41px;
     height: 26px;
     border-radius: 12px;
@@ -92,10 +93,16 @@ const changeValue = () => {
     align-items: center;
     padding: 0 4px;
     position: relative;
+    cursor: pointer;
+  }
+
+  .switch-off {
+    background-color: v-bind("computedColorDisabled");
   }
 
   &.switch-disabled .toggle-base {
     background-color: v-bind("computedColorDisabled");
+    cursor: auto;
   }
 
   .toggle-circle {

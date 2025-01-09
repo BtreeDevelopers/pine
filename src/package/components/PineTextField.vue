@@ -7,7 +7,7 @@ import { IIcons } from "../types/icons";
 const pine = usePine();
 const props = withDefaults(
   defineProps<{
-    "onClick:icon-right"?: () => void;
+    "onClick:iconRight"?: () => void;
     modelValue?: string | number;
     disabled?: boolean;
     readonly?: boolean;
@@ -19,7 +19,7 @@ const props = withDefaults(
     placeholder?: string;
     iconRight?: IIcons;
     iconLeft?: IIcons;
-    "onClick:icon-left"?: () => void;
+    "onClick:iconLeft"?: () => void;
   }>(),
   {
     width: "100%",
@@ -43,12 +43,16 @@ const computedValueWithUnit = computed(() => getValueWithUnit(props.width));
   <div class="pine-textfield">
     <p v-if="label">{{ label }}</p>
     <div class="container">
-      <PineIcon @click="emit('click:icon-left')" class="internal-icon left-icon"
-        :class="{ 'icon-clickble': props['onClick:icon-left'] }" v-if="iconLeft" :name="iconLeft"></PineIcon>
+      <PineIcon @click="disabled ? null : emit('click:icon-left')" class="internal-icon left-icon"
+        :color="disabled ? 'neutral60' : props.color"
+        :class="{ 'icon-clickble': props['onClick:iconLeft'] && !disabled }" v-if="iconLeft" :name="iconLeft">
+      </PineIcon>
       <input :placeholder="placeholder" :type="type" :disabled="disabled"
         @input="(e: any) => emit('update:modelValue', e.target!.value)" :value="modelValue" :readonly="readonly" />
-      <PineIcon @click="emit('click:icon-right')" class="internal-icon"
-        :class="{ 'icon-clickble': props['onClick:icon-right'] }" v-if="iconRight" :name="iconRight"></PineIcon>
+      <PineIcon @click="disabled ? null : emit('click:icon-right')" class="internal-icon"
+        :color="disabled ? 'neutral60' : props.color"
+        :class="{ 'icon-clickble': props['onClick:iconRight'] && !disabled }" v-if="iconRight" :name="iconRight">
+      </PineIcon>
     </div>
   </div>
 </template>
@@ -56,10 +60,6 @@ const computedValueWithUnit = computed(() => getValueWithUnit(props.width));
 <style lang="scss">
 #pine-app.dark .pine-textfield input {
   color: #f1f1f1;
-
-  &::placeholder {
-    color: #f1f1f1;
-  }
 }
 
 #pine-app .pine-textfield {
@@ -93,6 +93,7 @@ const computedValueWithUnit = computed(() => getValueWithUnit(props.width));
     cursor: pointer;
   }
 
+
   input {
     box-sizing: border-box;
     border: none;
@@ -107,7 +108,9 @@ const computedValueWithUnit = computed(() => getValueWithUnit(props.width));
     color: black;
 
     &::placeholder {
-      color: black;
+      color: v-bind("getColor('neutral60', pine)");
+      font-size: 14px;
+      font-weight: 400;
     }
 
     &:focus-visible:not([disabled]),

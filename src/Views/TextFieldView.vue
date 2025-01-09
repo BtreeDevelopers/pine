@@ -6,24 +6,17 @@ const color = ref("primary");
 const backgroundColor = ref("highlight");
 const disabled = ref(false);
 const label = ref("label");
+const placeholder = ref("placeholder");
 const icon = ref(undefined);
 </script>
 
 <template>
   <div class="about">
-    <PineTextField
-      v-model="value"
-      :disabled="disabled"
-      :color="color"
-      :background-color="backgroundColor"
-      :icon-right="icon"
-      :label="label"
-      @click:icon="
-        () => {
-          console.log('click icon');
-        }
-      "
-    />
+    <PineTextField v-model="value" :disabled="disabled" :color="color" :background-color="backgroundColor"
+      :icon-right="icon" :label="label" :placeholder="placeholder" @click:icon-right="() => {
+        console.log('click icon');
+      }
+        " />
     <p>
       {{ value }}
     </p>
@@ -32,6 +25,12 @@ const icon = ref(undefined);
         <legend>Label:</legend>
         <div>
           <input type="text" v-model="label" />
+        </div>
+      </fieldset>
+      <fieldset style="margin: 10px; width: 100%">
+        <legend>placeholder:</legend>
+        <div>
+          <input type="text" v-model="placeholder" />
         </div>
       </fieldset>
       <fieldset style="margin: 10px; width: 100%">
@@ -57,48 +56,24 @@ const icon = ref(undefined);
       <fieldset style="margin: 10px; width: 100%">
         <legend>Disabled:</legend>
         <div>
-          <input
-            type="radio"
-            id="sim"
-            name="sim"
-            :value="true"
-            v-model="disabled"
-          />
+          <input type="radio" id="sim" name="sim" :value="true" v-model="disabled" />
           <label for="sim">Sim</label>
         </div>
 
         <div>
-          <input
-            type="radio"
-            id="nao"
-            name="nao"
-            :value="false"
-            v-model="disabled"
-          />
+          <input type="radio" id="nao" name="nao" :value="false" v-model="disabled" />
           <label for="nao">Não</label>
         </div>
       </fieldset>
       <fieldset style="margin: 10px; width: 100%">
         <legend>Icone direita:</legend>
         <div>
-          <input
-            type="radio"
-            id="vazio"
-            name="vazio"
-            :value="undefined"
-            v-model="icon"
-          />
+          <input type="radio" id="vazio" name="vazio" :value="undefined" v-model="icon" />
           <label for="vazio">-</label>
         </div>
 
         <div>
-          <input
-            type="radio"
-            id="User"
-            name="User"
-            value="User"
-            v-model="icon"
-          />
+          <input type="radio" id="User" name="User" value="User" v-model="icon" />
           <label for="User">User</label>
         </div>
       </fieldset>
