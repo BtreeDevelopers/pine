@@ -131,10 +131,11 @@ const rounded = ref('');
         <option value="">base</option>
         <option value="-small">small</option>
         <option value="-large">large</option>
+        <option value="-circular">circular</option>
       </select>
 
 
-      <div :class="'rounded' + rounded" style="background-color: red; width: 50%; height: 70px;">
+      <div :class="'rounded' + rounded" style="background-color: red; width: 200px; height: 200px;">
         {{ 'rounded' + rounded }}
       </div>
 

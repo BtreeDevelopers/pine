@@ -7,7 +7,9 @@ import PineTag from "@/package/components/PineTag.vue";
 import PineTimePicker from "@/package/components/PineTimePicker.vue";
 import PineRadio from "@/package/components/PineRadio.vue";
 import PinePagination from "@/package/components/PinePagination.vue";
+import { useRouter } from "vue-router";
 const { t } = useI18n();
+const router = useRouter();
 
 const lista = Array.from({ length: 10 }, (_, i) => `${t('home.option')} ${i + 1}`);
 const valueSearch = ref('');
@@ -53,8 +55,10 @@ onBeforeUnmount(() => {
 })
 
 const redirectToRepo = () => {
-  console.log('aaa');
-  location.href = 'https://github.com/BtreeDevelopers/pine'
+  window.open('https://github.com/BtreeDevelopers/pine', "_blank");
+}
+const redirectToComponent = () => {
+  router.push('/components')
 }
 
 const pine = usePine();
@@ -77,7 +81,7 @@ const { breakpointRange, breakpoint, width } = useSize();
         <p class="neutral30 mb-8">
           {{ t('home.description') }}
         </p>
-        <PineBtn> {{ t('home.browseButton') }}</PineBtn>
+        <PineBtn @click="redirectToComponent"> {{ t('home.browseButton') }}</PineBtn>
       </div>
       <template v-if="breakpoint !== 'small'">
         <div class="d-flex  justify-between pine-col-6" style="gap:15px">
@@ -285,7 +289,8 @@ const { breakpointRange, breakpoint, width } = useSize();
       <h1 class="mb-10">{{ t('home.features.title') }}</h1>
       <div class="d-flex overflow-auto pb-5" v-if="breakpoint != 'small'" style="gap:20px">
         <PineCard style="min-width: 320px;" height="370">
-          <PineTimePicker></PineTimePicker>
+          <label class="font-weight-bold">Timer</label>
+          <PineTimePicker class="mt-2"></PineTimePicker>
         </PineCard>
         <PineCard style="min-width: 320px;" height="370">
           <PineDrawerModel style="background-color: #161922" :itens="(listDrawer as any)" selectedColor="#252831"
@@ -402,10 +407,12 @@ const { breakpointRange, breakpoint, width } = useSize();
       </div>
       <div class="quick">
         <h2 class="mb-3">{{ t('home.footer.quick.title') }}</h2>
-        <p style="line-height: 32px;font-size: 18px; color: #7E92AC;font-weight: 400;" class="mb-2">
+        <p style="line-height: 32px;font-size: 18px; color: #7E92AC;font-weight: 400; cursor: pointer;" class="mb-2"
+          @click="router.push('/docs')">
           {{ t('home.footer.quick.option1') }}
         </p>
-        <p style="line-height: 32px;font-size: 18px; color: #7E92AC;font-weight: 400;" class="mb-2">
+        <p style="line-height: 32px;font-size: 18px; color: #7E92AC;font-weight: 400; cursor: pointer;" class="mb-2"
+          @click="router.push('/components')">
           {{ t('home.footer.quick.option2') }}
         </p>
       </div>

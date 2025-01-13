@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="ts">;
 import { ref } from "vue";
 const valor = ref("teste");
 const valor2 = ref("a");

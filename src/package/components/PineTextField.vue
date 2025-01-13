@@ -63,7 +63,6 @@ const computedValueWithUnit = computed(() => getValueWithUnit(props.width));
 }
 
 #pine-app .pine-textfield {
-  margin: 2px;
 
   .container {
     position: relative;
@@ -123,7 +122,6 @@ const computedValueWithUnit = computed(() => getValueWithUnit(props.width));
     }
 
     font-size: 14px;
-    min-width: 260px;
     width: v-bind("computedValueWithUnit");
   }
 

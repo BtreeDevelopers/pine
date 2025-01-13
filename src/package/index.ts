@@ -10,6 +10,7 @@ import PineCard from "./components/PineCard.vue";
 import PineSwitch from "./components/PineSwitch.vue";
 import PineSwitchTheme from "./components/PineSwitchTheme.vue";
 import PineBtn from "./components/PineBtn.vue";
+import PineBtnIcon from "./components/PineBtnIcon.vue";
 import PineContainer from "./components/PineContainer.vue";
 import PineDialog from "./components/PineDialog.vue";
 import PineToast from "./components/PineToast.vue";
@@ -49,6 +50,7 @@ export function pinePlugin(app: App, options?: PinePlugin) {
   app.component("PineSwitch", PineSwitch);
   app.component("PineSwitchTheme", PineSwitchTheme);
   app.component("PineBtn", PineBtn);
+  app.component("PineBtnIcon", PineBtnIcon);
   app.component("PineContainer", PineContainer);
   app.component("PineDialog", PineDialog);
   app.component("PineToast", PineToast);

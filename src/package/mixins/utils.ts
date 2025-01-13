@@ -1,29 +1,38 @@
-import {PineApi} from "@/package"
-export function getColor(color:string,pine:PineApi ) {
+import { PineApi } from "@/package";
+export function getColor(color: string, pine: PineApi) {
   const regexHex =
     /(?:#)[0-9a-f]{8}|(?:#)[0-9a-f]{6}|(?:#)[0-9a-f]{4}|(?:#)[0-9a-f]{3}/gi;
   if (regexHex.test(color)) return color;
 
   if (!pine) return color;
-  if (pine.colors?.[pine.theme]?.[color]){
-      return pine.colors?.[pine.theme]?.[color];
+  if (pine.colors?.[pine.theme]?.[color]) {
+    return pine.colors?.[pine.theme]?.[color];
   }
   if (colorNameToHex(color)) return colorNameToHex(color);
   return color;
 }
-export function percentToHex(p:number) {
+export function percentToHex(p: number) {
   return `0${Math.round((255 / 100) * p).toString(16)}`.slice(-2).toUpperCase();
 }
 
-export function getValueWithUnit(value:string|number) {
+export function getValueWithUnit(value: string | number) {
   if (typeof value === "number") return value + "px";
   if (/^(\d{1,4})$/gi.test(value)) return value + "px";
   const regex = /^(\d{1,4})([a-z]{2})$/gi;
   if (regex.test(value)) return value;
   return value;
 }
+export function calcValue(value: string | number, reduce: number) {
+  let val = 0;
+  if (typeof value === "string") {
+    val = +value.replace(/\D/g, "");
+  } else {
+    val = value;
+  }
+  return val - val * reduce;
+}
 
-export function getAllChildren(children:any[]):any[] {
+export function getAllChildren(children: any[]): any[] {
   const results = [];
   for (let index = 0; index < children.length; index++) {
     const child = children[index];
@@ -36,8 +45,8 @@ export function getAllChildren(children:any[]):any[] {
   return results;
 }
 
-function colorNameToHex(color:string) {
-  const colors:Record<string,string> = {
+function colorNameToHex(color: string) {
+  const colors: Record<string, string> = {
     aliceblue: "#f0f8ff",
     antiquewhite: "#faebd7",
     aqua: "#00ffff",
@@ -186,8 +195,13 @@ function colorNameToHex(color:string) {
 
   return false;
 }
-export function addOnceEventListener(el:HTMLElement, eventName:string, cb:Function, options = false) {
-  const once:EventListenerOrEventListenerObject = (event) => {
+export function addOnceEventListener(
+  el: HTMLElement,
+  eventName: string,
+  cb: Function,
+  options = false
+) {
+  const once: EventListenerOrEventListenerObject = (event) => {
     cb(event);
     el.removeEventListener(eventName, once, options);
   };

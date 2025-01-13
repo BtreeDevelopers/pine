@@ -34,7 +34,7 @@ const emit = defineEmits<{ click: [] }>();
   <button class="pine-button" :class="[type + '-button', { 'loading-button': loading }]" :disabled="loading"
     @click="emit('click')">
     <div class="loading" v-if="loading">
-      <PineLoading color="white" background-color="highlight" weight="6"></PineLoading>
+      <PineLoading color="neutral0" background-color="highlight" weight="6"></PineLoading>
     </div>
     <div class="content">
       <slot></slot>
@@ -46,6 +46,11 @@ const emit = defineEmits<{ click: [] }>();
 .pine-button {
   width: v-bind("widthCmp");
   height: v-bind("heightCmp");
+
+  .content {
+    display: flex;
+    align-items: center;
+  }
 
   border-radius: 5px;
   padding: 10px 30px;
@@ -123,7 +128,8 @@ const emit = defineEmits<{ click: [] }>();
     }
 
     &:active:not(.loading-button) {
-      background-color: v-bind("backgroundColorCmp+ percentToHex(20)");
+      background-color: v-bind("backgroundColorCmp + percentToHex(20)");
     }
   }
-}</style>
+}
+</style>

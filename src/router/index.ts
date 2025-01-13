@@ -24,9 +24,13 @@ import CalendarView from "@/Views/CalendarView.vue";
 import UploadView from "@/Views/UploadView.vue";
 import StyleView from "@/Views/StyleView.vue";
 import CarouselView from "@/Views/CarouselView.vue";
+import ComponentsView from "@/Views/ComponentsView.vue";
+import DocsViews from "@/Views/DocsViews.vue";
 
 const routes = [
   { path: "/", component: HomeView },
+  { path: "/docs", component: DocsViews },
+  { path: "/components", component: ComponentsView },
   { path: "/textfield", component: TextFieldView },
   { path: "/icon", component: IconView },
   { path: "/loading", component: LoadingView },
