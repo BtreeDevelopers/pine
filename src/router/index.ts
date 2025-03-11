@@ -60,4 +60,16 @@ export const router = createRouter({
   // history: createWebHashHistory('/pine/'),
   history: createWebHashHistory(),
   routes,
+  scrollBehavior(to, from, SavedPosition) {
+    if (to.hash) {
+      const el = to.hash.replace("#", "");
+      if (el.length) {
+        document.getElementById(el)!.scrollIntoView({ behavior: "smooth" });
+      }
+    } else if (SavedPosition) {
+      return SavedPosition;
+    } else {
+      document.getElementById("app")!.scrollIntoView({ behavior: "smooth" });
+    }
+  },
 });

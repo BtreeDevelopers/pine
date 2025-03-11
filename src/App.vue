@@ -6,6 +6,7 @@ const pine = usePine();
 const router = useRouter();
 console.log(pine);
 import { useI18n } from "vue-i18n";
+import { getColor } from "./package/mixins/utils";
 
 const { t, locale } = useI18n();
 
@@ -13,6 +14,7 @@ const changeLocale = (local: string) => {
   locale.value = local
   localStorage.setItem('lang', locale.value);
 }
+const backgroundColorCmp = computed(() => getColor('background', pine));
 onMounted(() => {
   changeLocale(localStorage.getItem('lang') || 'pt')
 })
@@ -44,13 +46,14 @@ const currentYear = computed(() => new Date().getFullYear());
             <PineIcon name="Bars3"></PineIcon>
             <template v-slot:menu>
               <div class="d-flex flex-column align-start" style="gap: 15px">
-                <div class="d-flex justify-around w-100 cursor-pointer">
+                <div class="d-flex justify-around align-center w-100 cursor-pointer">
                   <img @click="changeLocale('pt')" src="@/assets/img/br.svg" alt="" height="17">
                   <img @click="changeLocale('en')" src="@/assets/img/us.svg" alt="" height="17">
+                  <div class="divider"></div>
+                  <PineSwitchTheme></PineSwitchTheme>
                 </div>
                 <RouterLink class="routerlink" to="/docs">{{ t('header.docs') }}</RouterLink>
                 <RouterLink class="routerlink" to="/components">{{ t('header.components') }}</RouterLink>
-                <PineSwitchTheme></PineSwitchTheme>
               </div>
             </template>
           </PineMenu>
@@ -107,5 +110,11 @@ const currentYear = computed(() => new Date().getFullYear());
 .routerlink {
   color: inherit;
   text-decoration: none;
+}
+
+.divider {
+  height: 100%;
+
+  border: 1px solid v-bind(backgroundColorCmp);
 }
 </style>

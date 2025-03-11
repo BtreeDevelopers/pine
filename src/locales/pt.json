@@ -88,5 +88,36 @@
         "button": "Inscrever"
       }
     }
+  },
+  "docs": {
+    "header": {
+      "vue": "Usando Vue 3",
+      "simple": "Instalação simples",
+      "options": "Instalação com opções",
+      "usage": "Uso",
+      "react": "Usando React",
+      "figma": "Figma"
+    },
+    "simple": {
+      "text1": "Para usar",
+      "pine": "Pine UI",
+      "text2": "no seu projeto, execute o seguinte comando no terminal:",
+      "text3": "Importe",
+      "text4": "no arquivo principal do seu projeto",
+      "text5": "Insira na instância da sua aplicação",
+      "alert": "Opcional: você pode passar parâmetros para configurar o Pine UI da forma que preferir"
+    },
+    "options": {
+      "text1": "Para usar o Pine UI no seu projeto, execute o seguinte comando no terminal:",
+      "text2": "Importe",
+      "pine": "Pine UI",
+      "text3": "no arquivo principal do seu projeto, passando as opções:"
+    },
+    "example": {
+      "com1": "Instância do Pine para obter configurações como (cores, tema)",
+      "com2": "No app da aplicação, insira o PineApp para obter todas as configurações necessárias para o projeto.",
+      "com3": "Tudo mais",
+      "com4": "RestoDaSuaAplicacao"
+    }
   }
 }

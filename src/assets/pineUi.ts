@@ -1,17 +1,6 @@
 import { createTheme } from "thememirror";
 import { tags as t } from "@lezer/highlight";
-
-export const pineUi = createTheme({
-  variant: "dark",
-  settings: {
-    background: "#252831",
-    foreground: "#f1d710",
-    caret: "#ffffff",
-    selection: "#264f78",
-    lineHighlight: "#ffffff00",
-    gutterBackground: "#252831",
-    gutterForeground: "#858585",
-  },
+const themeBase = {
   styles: [
     {
       tag: t.comment,
@@ -59,7 +48,7 @@ export const pineUi = createTheme({
     },
     {
       tag: t.angleBracket,
-      color: "#ffffff",
+      color: "#808080",
     },
     {
       tag: t.tagName,
@@ -70,4 +59,39 @@ export const pineUi = createTheme({
       color: "#c792ea",
     },
   ],
+};
+
+export const pineUiLight = createTheme({
+  variant: "light",
+  settings: {
+    background: "#E5E6E8",
+    foreground: "#b19d07",
+    caret: "#808080",
+    selection: "#264f78",
+    lineHighlight: "#ffffff00",
+    gutterBackground: "#252831",
+    gutterForeground: "#858585",
+  },
+  ...themeBase,
+  styles: [
+    ...themeBase.styles,
+    {
+      tag: [t.string, t.special(t.brace)],
+      color: "#FF8A00",
+    },
+  ],
+});
+
+export const pineUi = createTheme({
+  variant: "dark",
+  settings: {
+    background: "#252831",
+    foreground: "#f1d710",
+    caret: "#ffffff",
+    selection: "#264f78",
+    lineHighlight: "#ffffff00",
+    gutterBackground: "#252831",
+    gutterForeground: "#858585",
+  },
+  ...themeBase,
 });

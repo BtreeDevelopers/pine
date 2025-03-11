@@ -88,5 +88,36 @@
         "button": "Subscribe"
       }
     }
+  },
+  "docs": {
+    "header": {
+      "vue": "Using Vue 3",
+      "simple": "Simple installation",
+      "options": "Installation with options",
+      "usage": "Usage",
+      "react": "Using React",
+      "figma": "Figma"
+    },
+    "simple": {
+      "text1": "To use",
+      "pine": "Pine UI",
+      "text2": "in your project, run one of the following commands in your terminal:",
+      "text3": "Import",
+      "text4": "into your project's main",
+      "text5": "Insert it into your application instance",
+      "alert": "Optional: you can pass parameters to configure the Pine UI the way you want"
+    },
+    "options": {
+      "text1": "To use Pine UI in your project, run one of the following commands in your terminal:",
+      "text2": "Import",
+      "pine": "Pine UI",
+      "text3": "into your project's main, passing the options:"
+    },
+    "example": {
+      "com1": "Pine instance to retrieve settings such as (colors, theme)",
+      "com2": "In the application app, integrate PineApp to retrieve all the necessary configurations for the project.",
+      "com3": "everything else",
+      "com4": "TheRestOfYourApplication"
+    }
   }
 }
