@@ -1,0 +1,16 @@
+# Pastas e arquivos de build
+node_modules
+dist
+
+# Arquivos de config que não precisam ir para a imagem
+.dockerignore
+docker-compose.yml
+*.log
+.git
+.gitignore
+.env
+*.cache
+
+# Cache do editor/IDE
+.vscode
+.idea

@@ -6,7 +6,7 @@ const icons = computed(() => {
     return Object.keys(HeroIcons).map(e => e.replace('Icon', ''));
 })
 const icon = ref<IIcons>('User');
-const type = ref('outline');
+const type = ref<'outline' | 'solid'>('outline');
 const color = ref('primary');
 const size = ref(25);
 

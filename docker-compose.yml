@@ -1,0 +1,9 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "2311:80" # Porta local:porta container (Nginx)
+    environment:
+      NODE_ENV: production

@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "@/Views/HomeView.vue";
 import TextFieldView from "@/Views/TextFieldView.vue";
 import IconView from "@/Views/IconView.vue";
@@ -63,7 +63,7 @@ const routes: RouteRecordRaw[] = [
 ];
 export const router = createRouter({
   // history: createWebHashHistory('/pine/'),
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
   scrollBehavior(to, _, SavedPosition) {
     if (to.hash) {
