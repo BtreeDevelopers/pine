@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "@/Views/HomeView.vue";
 import TextFieldView from "@/Views/TextFieldView.vue";
 import IconView from "@/Views/IconView.vue";
@@ -27,34 +27,39 @@ import CarouselView from "@/Views/CarouselView.vue";
 import ComponentsView from "@/Views/ComponentsView.vue";
 import DocsViews from "@/Views/DocsViews.vue";
 
-const routes = [
+const routes: RouteRecordRaw[] = [
   { path: "/", component: HomeView },
   { path: "/docs", component: DocsViews },
-  { path: "/components", component: ComponentsView },
-  { path: "/textfield", component: TextFieldView },
-  { path: "/icon", component: IconView },
-  { path: "/loading", component: LoadingView },
-  { path: "/drawer", component: DrawerView },
-  { path: "/drawermodel", component: DrawerModelView },
-  { path: "/tooltip", component: TooltipView },
-  { path: "/menu", component: MenuView },
-  { path: "/select", component: SelectView },
-  { path: "/card", component: CardView },
-  { path: "/switch", component: SwitchView },
-  { path: "/switchtheme", component: SwitchThemeView },
-  { path: "/btn", component: BtnView },
-  { path: "/container", component: ContainerView },
-  { path: "/dialog", component: DialogView },
-  { path: "/toast", component: ToastView },
-  { path: "/checkbox", component: CheckboxView },
-  { path: "/footer", component: FooterView },
-  { path: "/header", component: HeaderView },
-  { path: "/pickcolor", component: PickColorView },
-  { path: "/avatar", component: AvatarView },
-  { path: "/calendar", component: CalendarView },
-  { path: "/upload", component: UploadView },
-  { path: "/carousel", component: CarouselView },
-  { path: "/style", component: StyleView },
+  {
+    path: "/components",
+    component: ComponentsView,
+    children: [
+      { path: "textfield", component: TextFieldView },
+      { path: "icon", component: IconView },
+      { path: "loading", component: LoadingView },
+      { path: "drawer", component: DrawerView },
+      { path: "drawermodel", component: DrawerModelView },
+      { path: "tooltip", component: TooltipView },
+      { path: "menu", component: MenuView },
+      { path: "select", component: SelectView },
+      { path: "card", component: CardView },
+      { path: "switch", component: SwitchView },
+      { path: "switchtheme", component: SwitchThemeView },
+      { path: "btn", component: BtnView },
+      { path: "container", component: ContainerView },
+      { path: "dialog", component: DialogView },
+      { path: "toast", component: ToastView },
+      { path: "checkbox", component: CheckboxView },
+      { path: "footer", component: FooterView },
+      { path: "header", component: HeaderView },
+      { path: "pickcolor", component: PickColorView },
+      { path: "avatar", component: AvatarView },
+      { path: "calendar", component: CalendarView },
+      { path: "upload", component: UploadView },
+      { path: "carousel", component: CarouselView },
+      { path: "style", component: StyleView },
+    ],
+  },
 ];
 export const router = createRouter({
   // history: createWebHashHistory('/pine/'),

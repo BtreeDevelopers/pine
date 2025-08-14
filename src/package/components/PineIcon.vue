@@ -21,15 +21,19 @@ const props = withDefaults(
 
 const icon = computed(() => {
   const iconName = (props.name + "Icon") as IconNames;
-  return defineAsyncComponent(async () => {
-    if (props.type == "solid") {
+  if (props.type == "solid") {
+    return defineAsyncComponent(async () => {
       const icons = await import(`@heroicons/vue/24/solid/index.js`);
       return icons[iconName];
-    } else {
+    });
+  }
+  else {
+    return defineAsyncComponent(async () => {
       const icons = await import(`@heroicons/vue/24/outline/index.js`);
       return icons[iconName];
-    }
-  });
+    });
+  }
+
 });
 const computedColor = computed(() => getColor(props.color, pine));
 const computedValueWithUnit = computed(() => getValueWithUnit(props.size));

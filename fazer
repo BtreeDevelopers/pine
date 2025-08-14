@@ -1,6 +1,18 @@
-- 
-ok button icon
-ok CSS: border-radius circular
-ok largura do select meio zoada
-ok validar pegar poppins em projetos de fora
-ok #pine-app .pine-textfield { margin: 2px; } = esta atrapalhando usar margin
+Componentes novos:
+
+- Forms
+- Tooltip
+- Skeleton
+- Data Table
+
+Componentes atualizados:
+
+- Menu (dir)
+- textfield (expose datas)
+- Upload (ajustes de funções)
+- Pagination (ajustes de funções)
+- Time pick (selecao de hora corrigida e css corrigido)
+
+Outros:
+
+- CEPMask ( e outras mascaras)

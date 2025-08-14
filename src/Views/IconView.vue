@@ -6,13 +6,14 @@ const icons = computed(() => {
     return Object.keys(HeroIcons).map(e => e.replace('Icon', ''));
 })
 const icon = ref<IIcons>('User');
+const type = ref('outline');
 const color = ref('primary');
 const size = ref(25);
 
 </script>
 <template>
     <div class="about">
-        <PineIcon :name="icon" :color="color" :size="size"></PineIcon>
+        <PineIcon :name="icon" :color="color" :type="type" :size="size"></PineIcon>
         <div style="display: flex">
             <fieldset style="margin: 10px; width: 100%">
                 <legend>Name:</legend>
@@ -29,6 +30,15 @@ const size = ref(25);
                         <option value="primary">Primary</option>
                         <option value="red">red</option>
                         <option value="#228b22">#228b22</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset style="margin: 10px; width: 100%">
+                <legend>Tipo:</legend>
+                <div>
+                    <select name="type" id="type" v-model="type">
+                        <option value="outline">outline</option>
+                        <option value="solid">solid</option>
                     </select>
                 </div>
             </fieldset>
