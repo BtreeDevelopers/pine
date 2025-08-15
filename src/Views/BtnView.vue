@@ -23,6 +23,9 @@ const icon = ref<IIcons>('User');
       <PineBtn :type="type" @click="clickButton" :color="color" :loading="load">teste</PineBtn>
       <br />
       <br />
+      <PineBtn :type="type" @click="clickButton" :color="color" :loading="load" style="width: 200px;">teste</PineBtn>
+      <br />
+      <br />
       <PineBtnIcon :type="type" @click="clickButton" :color="color" :loading="load" :icon="icon"></PineBtnIcon>
 
       <br />

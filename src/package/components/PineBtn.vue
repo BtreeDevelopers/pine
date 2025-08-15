@@ -50,6 +50,7 @@ const emit = defineEmits<{ click: [] }>();
   .content {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   border-radius: 5px;

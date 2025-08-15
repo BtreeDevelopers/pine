@@ -8,7 +8,7 @@ Bem-vindo ao Pine Design System! Pine é um conjunto de diretrizes e componentes
   [Design System Pine UI v1 - bTree](https://www.behance.net/gallery/161882269/Design-System-Pine-UI-v1-bTree)
 
 - **Documentação**: A documentação do Pine está em processo de criação. Entretanto, você encontrará boas informações para começar a usar e implementar o design system em seus projetos. Acesse a documentação aqui:
-  [Documentação Pine](https://btreedevelopers.github.io/pine/)
+  [Documentação Pine](http://pine.btreedevs.com.br/)
 
 ## Instalação
 
